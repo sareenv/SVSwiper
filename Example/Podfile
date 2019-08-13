@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SVSwiper_Example' do
+  pod 'SVSwiper', :path => '../'
+
+  target 'SVSwiper_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
