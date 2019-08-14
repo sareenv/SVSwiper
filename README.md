@@ -63,7 +63,10 @@ extension ViewController: SVSwiperDelegate{
 ```
 
 
-## Requirements
+## Screenshots
+
+![ScreenShot](https://{paste.pics/467cde564744ca74ce736ea48b01f444})
+
 
 ## Installation
 
