@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SVSwiper'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of SVSwiper.'
+  s.summary          = 'SVSwiper framework allows users to have animations in singleView Controller'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+'SVSwiper framework allows users to have animations within a single  controller. This library has delegate methods which allows users to customise the navigation options such as menubar tintColor, titles for controllers and other properties'
                        DESC
 
   s.homepage         = 'https://github.coventry.ac.uk/sareenv/SVSwiper'
