@@ -1,0 +1,6 @@
+framework module Pods_SVSwiper_Example {
+  umbrella header "Pods-SVSwiper_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
