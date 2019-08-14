@@ -60,13 +60,6 @@ extension ViewController: SVSwiperDelegate{
     
 }
 
-
-
-
-
-
-
-
 ```
 
 
