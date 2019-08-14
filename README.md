@@ -1,6 +1,5 @@
 # SVSwiper
 
-[![CI Status](https://img.shields.io/travis/buggyman026@gmail.com/SVSwiper.svg?style=flat)](https://travis-ci.org/buggyman026@gmail.com/SVSwiper)
 [![Version](https://img.shields.io/cocoapods/v/SVSwiper.svg?style=flat)](https://cocoapods.org/pods/SVSwiper)
 
 
