@@ -5,6 +5,19 @@ SVSwiper library uses core UIKit components and provides custom navigation acros
 [![Version](https://img.shields.io/cocoapods/v/SVSwiper.svg?style=flat)](https://cocoapods.org/pods/SVSwiper)
 
 
+
+
+
+## Installation
+
+SVSwiper is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'SVSwiper'
+```
+
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -63,14 +76,6 @@ extension ViewController: SVSwiperDelegate{
 ```
 
 
-## Installation
-
-SVSwiper is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'SVSwiper'
-```
 
 ## Author
 
