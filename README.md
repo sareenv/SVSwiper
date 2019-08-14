@@ -22,7 +22,7 @@ pod 'SVSwiper'
 
 ## Author
 
-buggyman026@gmail.com, sareenv@uni.coventry.ac.uk
+Vinayak is the author for this repository, If you have any suggestion / recommendations please feel free. sareenv@uni.coventry.ac.uk is my email. 
 
 ## License
 
