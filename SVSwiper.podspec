@@ -21,22 +21,22 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/buggyman026@gmail.com/SVSwiper'
+  s.homepage         = 'https://github.coventry.ac.uk/sareenv/SVSwiper'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'buggyman026@gmail.com' => 'sareenv@uni.coventry.ac.uk' }
-  s.source           = { :git => 'https://github.com/buggyman026@gmail.com/SVSwiper.git', :tag => s.version.to_s }
+  s.author           = { 'Vinayak' => 'sareenv@uni.coventry.ac.uk' }
+  s.source           = { :git => 'https://github.coventry.ac.uk/sareenv/SVSwiper.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'SVSwiper/Classes/**/*'
+  s.source_files = 'SVSwiper/Classes/*.swift'
   
   # s.resource_bundles = {
   #   'SVSwiper' => ['SVSwiper/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

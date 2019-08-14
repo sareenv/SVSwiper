@@ -75,7 +75,7 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
         view.addSubview(headerCell)
 
         if #available(iOS 9.0, *) {
-            headerCell.anchor(topAnchor: view.topAnchor, bottomAnchor: view.bottomAnchor, leadingAnchor: view.leadingAnchor, trailingAnchor: view.trailingAnchor)
+            headerCell.svAnchor(topAnchor: view.topAnchor, bottomAnchor: view.bottomAnchor, leadingAnchor: view.leadingAnchor, trailingAnchor: view.trailingAnchor)
             headerCell.widthAnchor.constraint(equalToConstant: menuBarSize?.width ?? view?.frame.width ?? 0).isActive = true
             headerCell.heightAnchor.constraint(equalToConstant: menuBarSize?.height ?? 0).isActive = true // change this
         }
@@ -114,7 +114,7 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
         stackView.alignment = .center
         stackView.axis = .horizontal
         self.headerCell.addSubview(stackView)
-        stackView.fillSuperView()
+        stackView.svFillSuperView()
     }
     
     

@@ -10,7 +10,8 @@ import UIKit
 import SVSwiper
 
 class ViewController: UIViewController {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -25,7 +26,7 @@ class ViewController: UIViewController {
         self.addChildViewController(controller)
         guard let cview = controller.view else { return }
         view.addSubview(cview)
-        cview.fillSuperView()
+        cview.svFillSuperView()
     }
     
 }
@@ -41,11 +42,11 @@ extension ViewController: SVSwiperDelegate{
     }
     
     func barColor() -> UIColor {
-        return #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     
     func textColor() -> UIColor {
-        return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        return #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
     
     func titleTextColor() -> UIColor {

@@ -26,7 +26,7 @@ class SVSwiperCustomCell: UICollectionViewCell{
         guard let childView = viewController.view else { return }
         self.addSubview(childView)
         if #available(iOS 9.0, *) {
-            childView.fillSuperView(top: 5)
+            childView.svFillSuperView(top: 5)
         }
     }
     
@@ -36,3 +36,4 @@ class SVSwiperCustomCell: UICollectionViewCell{
         super.init(coder: aDecoder)
     }
 }
+

@@ -18,8 +18,8 @@
 		4259B00723035BC100A57B87 /* SwiperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259B00523035BC100A57B87 /* SwiperDelegate.swift */; };
 		4259B00923035C0D00A57B87 /* SVSwiperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259B00823035C0D00A57B87 /* SVSwiperController.swift */; };
 		4259B00A23035C0D00A57B87 /* SVSwiperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259B00823035C0D00A57B87 /* SVSwiperController.swift */; };
-		4259B00C2303600100A57B87 /* SVSwiperCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259B00B2303600100A57B87 /* SVSwiperCustomCell.swift */; };
-		4259B00D2303600100A57B87 /* SVSwiperCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259B00B2303600100A57B87 /* SVSwiperCustomCell.swift */; };
+		4259B01623038B9800A57B87 /* SVSwiperCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259B01523038B9800A57B87 /* SVSwiperCustomCell.swift */; };
+		4259B01723038B9800A57B87 /* SVSwiperCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259B01523038B9800A57B87 /* SVSwiperCustomCell.swift */; };
 		4532E5A8FDD4D02FB93F9AA5B2C8BCFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		7995C08CE91936F81C571031EF72F880 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		8E157B78DF11F8B161DE90F2C519BA50 /* Pods-SVSwiper_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7730FF70A2A704BAB722F13B6CB2A082 /* Pods-SVSwiper_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -56,7 +56,7 @@
 		4259AFFF2303597100A57B87 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constraints.swift; path = SVSwiper/Classes/Constraints.swift; sourceTree = "<group>"; };
 		4259B00523035BC100A57B87 /* SwiperDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiperDelegate.swift; path = SVSwiper/Classes/SwiperDelegate.swift; sourceTree = "<group>"; };
 		4259B00823035C0D00A57B87 /* SVSwiperController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SVSwiperController.swift; path = SVSwiper/Classes/SVSwiperController.swift; sourceTree = "<group>"; };
-		4259B00B2303600100A57B87 /* SVSwiperCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVSwiperCustomCell.swift; sourceTree = "<group>"; };
+		4259B01523038B9800A57B87 /* SVSwiperCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SVSwiperCustomCell.swift; path = SVSwiper/Classes/SVSwiperCustomCell.swift; sourceTree = "<group>"; };
 		49ADA7EF2F48657D1F47796AA9401D98 /* Pods-SVSwiper_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SVSwiper_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		73ACA27008B3D56FBDED179B155DEB84 /* Pods-SVSwiper_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SVSwiper_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7444F982D344637647B715F11D10B280 /* SVSwiper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVSwiper-dummy.m"; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 				4259AFFF2303597100A57B87 /* Constraints.swift */,
 				4259B00823035C0D00A57B87 /* SVSwiperController.swift */,
 				4259B00523035BC100A57B87 /* SwiperDelegate.swift */,
-				4259B00B2303600100A57B87 /* SVSwiperCustomCell.swift */,
+				4259B01523038B9800A57B87 /* SVSwiperCustomCell.swift */,
 				879DDFAE04B5D747BAF04EA5C617EB4C /* Pod */,
 				2C6978396A2C930E4BBC33272DDF7D9C /* Support Files */,
 			);
@@ -392,7 +392,7 @@
 			files = (
 				4259B00723035BC100A57B87 /* SwiperDelegate.swift in Sources */,
 				4259B001230359A500A57B87 /* Constraints.swift in Sources */,
-				4259B00D2303600100A57B87 /* SVSwiperCustomCell.swift in Sources */,
+				4259B01723038B9800A57B87 /* SVSwiperCustomCell.swift in Sources */,
 				4259B00A23035C0D00A57B87 /* SVSwiperController.swift in Sources */,
 				0D55EF6C123D6247F5733BF76046010F /* SVSwiper-dummy.m in Sources */,
 			);
@@ -404,7 +404,7 @@
 			files = (
 				4259B00623035BC100A57B87 /* SwiperDelegate.swift in Sources */,
 				4259B0002303597100A57B87 /* Constraints.swift in Sources */,
-				4259B00C2303600100A57B87 /* SVSwiperCustomCell.swift in Sources */,
+				4259B01623038B9800A57B87 /* SVSwiperCustomCell.swift in Sources */,
 				4259B00923035C0D00A57B87 /* SVSwiperController.swift in Sources */,
 				3DB5D0109F014E2EAB5BF09516A8716C /* Pods-SVSwiper_Example-dummy.m in Sources */,
 			);
