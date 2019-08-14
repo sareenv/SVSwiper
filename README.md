@@ -1,6 +1,6 @@
 # SVSwiper
 
-SVSwiper library uses core UIKit components and provides custom navigation between different controllers.
+SVSwiper library uses core UIKit components and provides custom navigation across various controllers. SVSwiper provides various delegate methods to customise the navigation according the needs of application. Any contributions towards this library are welcome. 
 
 [![Version](https://img.shields.io/cocoapods/v/SVSwiper.svg?style=flat)](https://cocoapods.org/pods/SVSwiper)
 
