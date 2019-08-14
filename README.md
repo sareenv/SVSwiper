@@ -63,11 +63,6 @@ extension ViewController: SVSwiperDelegate{
 ```
 
 
-## Screenshots
-
-![ScreenShot](https://{https://paste.pics/467cde564744ca74ce736ea48b01f444})
-
-
 ## Installation
 
 SVSwiper is available through [CocoaPods](https://cocoapods.org). To install
