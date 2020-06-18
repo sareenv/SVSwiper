@@ -84,7 +84,7 @@ Vinayak is the author for this repository, If you have any suggestion / recommen
 ## License
 
 
-Copyright (c) 2019 Vinayak <sareenv@uni.coventry.ac.uk>
+Copyright (c) 2019 Vinayak <sareenv026@outlook.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
