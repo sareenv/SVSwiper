@@ -79,7 +79,7 @@ extension ViewController: SVSwiperDelegate{
 
 ## Author
 
-Vinayak is the author for this repository, If you have any suggestion / recommendations please feel free. sareenv@uni.coventry.ac.uk is my email. 
+Vinayak is the author for this repository, If you have any suggestion / recommendations please feel free. sareenv026@outlook.com is my email. 
 
 ## License
 
