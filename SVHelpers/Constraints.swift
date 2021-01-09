@@ -25,19 +25,20 @@ public extension UIView{
         self.translatesAutoresizingMaskIntoConstraints = false
         
         if let topAnchor = topAnchor{
-            self.topAnchor.constraint(equalTo: topAnchor, constant: padding.top)
+            self.topAnchor.constraint(equalTo: topAnchor, constant: padding.top).isActive = true
+            
         }
     
         if let bottomAnchor = bottomAnchor{
-            self.bottomAnchor.constraint(equalTo: bottomAnchor, constant: padding.bottom)
+            self.bottomAnchor.constraint(equalTo: bottomAnchor, constant: padding.bottom).isActive = true
         }
         
         if let leadingAnchor = leadingAnchor{
-            self.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding.left)
+            self.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding.left).isActive = true
         }
         
         if let trailingAnchor = trailingAnchor{
-            self.trailingAnchor.constraint(equalTo: trailingAnchor, constant: padding.right)
+            self.trailingAnchor.constraint(equalTo: trailingAnchor, constant: padding.right).isActive = true
         }
     }
     

@@ -1,22 +1,25 @@
 {
   "name": "SVSwiper",
   "version": "0.1.0",
-  "summary": "A short description of SVSwiper.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/buggyman026@gmail.com/SVSwiper",
+  "summary": "SVSwiper framework allows users to have navigation within a single Controller",
+  "swift_versions": "4.0",
+  "description": "'SVSwiper framework allows users to have navigation within a single controller. This library has delegate methods which allows users to customise the navigation options such as menubar tintColor, titles for controllers and other properties'",
+  "homepage": "https://github.com/sareenv/SVSwiper",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "buggyman026@gmail.com": "sareenv@uni.coventry.ac.uk"
+    "Vinayak": "sareenv026@outlook.com"
   },
   "source": {
-    "git": "https://github.com/buggyman026@gmail.com/SVSwiper.git",
+    "git": "https://github.com/sareenv/SVSwiper.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "11.0"
   },
-  "source_files": "SVSwiper/Classes/**/*"
+  "source_files": "SVSwiper/Classes/*.swift",
+  "frameworks": "UIKit",
+  "swift_version": "4.0"
 }
