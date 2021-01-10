@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '11.0'
 
-  s.source_files = 'SVSwiper/Classes/*.swift'
+  s.source_files = 'SVSwiper/Classes/**/*.swift'
   
   # s.resource_bundles = {
   #   'SVSwiper' => ['SVSwiper/Assets/*.png']

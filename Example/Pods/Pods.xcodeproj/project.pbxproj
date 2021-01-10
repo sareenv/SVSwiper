@@ -9,75 +9,77 @@
 /* Begin PBXBuildFile section */
 		08E2CF4E7E9215ED7CF2267637751B9B /* Pods-SVSwiper_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5DBB643B99E15B7D195E2D33001065 /* Pods-SVSwiper_Tests-dummy.m */; };
 		0DE08B41613654BC6EE1DE58D3F8831E /* Pods-SVSwiper_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EABCF09B125A7BF313C1CAC0A399649D /* Pods-SVSwiper_Example-dummy.m */; };
-		0F6920CD0AF7F17F243895DA1A89D4FA /* SVSwiper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AB34B79DEDEDFA18970ADFBAC36E8181 /* SVSwiper-dummy.m */; };
-		4282168F25AA516E00C9A19C /* SVContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4282168E25AA516E00C9A19C /* SVContent.swift */; };
+		1B63007667A8506A7D765403F632DD8F /* SVContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069271EA65E3B8D5E4FDE071078E36F3 /* SVContent.swift */; };
+		2FD325DC3436FE8B0F94FD92437AFA0B /* SVSwiper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2644C4BEB25FCB7D26ADE361E1F4BBF0 /* SVSwiper-dummy.m */; };
+		42231FC51EEE0FAE711999B4CE886F94 /* SwiperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0E49771530AB225709551D144139E4 /* SwiperDelegate.swift */; };
 		501B6FB7CFDF0E7953C2CEA30EE4A5F1 /* Pods-SVSwiper_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7730FF70A2A704BAB722F13B6CB2A082 /* Pods-SVSwiper_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		62F9C60B7D6D27B660D7CCF484E96E6B /* SwiperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACEA510AC595FB9CD0843FF87BD826 /* SwiperDelegate.swift */; };
-		6330C9C1258C0CEE7870FA47990AA9DB /* SVSwiper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 59DB984DA831979AC34388549475373C /* SVSwiper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		525C30AB82E63C5AEAD61B2C67D250AF /* SVSwiperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C172A4853F90B38A7D57167D78C139CA /* SVSwiperController.swift */; };
+		5B0BEA4E9A60ADA0EFF879B4F94E57C9 /* SVSwiper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B696D94D69A385B102BC86351A195062 /* SVSwiper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73E7B9D0BC1E6186F99BC48CEB75E1F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		810747FED9691C6D31A883006111AC2E /* SVSwiperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1657E2C96BE93D1B81EB0B31D2D0214 /* SVSwiperController.swift */; };
-		ADECAB2902EA3AB6B259430D73191808 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0194BB28F82AA9F356DB03D9B5C529EB /* Constraints.swift */; };
+		78154FA58FBAB88061A405FBA93284A1 /* SVSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70FF0DCF7E3CA3828DE927862740C8E /* SVSliderCell.swift */; };
 		B508B59FE663841EF0C5E26B74D2BECA /* Pods-SVSwiper_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BAAD4423C429D9824CD2FF56C0C679F9 /* Pods-SVSwiper_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BA6A372F9F8C1A0441673EEFFDE1A659 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
+		C4BED9046E2439F75E84F746BD4D5576 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
+		D4A923B581ED2437E986070517D3EB2D /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80717AB9036C5BB0F44E6F8F54D8C33D /* Constraints.swift */; };
+		DC10FD2A4CF5D2F6180543BF4CC29067 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		EBA849C535D8DD7536E0E7CA9D40F758 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		F2145298A7137CFB199066B0F88913C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DD72C2333C096FD39EE5867BB3B4307D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6C9B171FAACC63B12BAEFFC1D5015D14;
-			remoteInfo = SVSwiper;
-		};
-		F496AF37C1D642EF66FE600C9FF18F81 /* PBXContainerItemProxy */ = {
+		0C9E7B59232606A58E78C6C26C1BB589 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6970EDC76240751E3FA84D7F301E466A;
 			remoteInfo = "Pods-SVSwiper_Example";
 		};
+		BA8A592A02D1D750C0E6F4B4D4ED0D31 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C9B171FAACC63B12BAEFFC1D5015D14;
+			remoteInfo = SVSwiper;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0194BB28F82AA9F356DB03D9B5C529EB /* Constraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
-		0202270ED71764BEDA2B38853E487DFD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		069271EA65E3B8D5E4FDE071078E36F3 /* SVContent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SVContent.swift; sourceTree = "<group>"; };
 		0D6FACB74C55642F7F65C6EBCBE57D87 /* Pods_SVSwiper_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SVSwiper_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5DBB643B99E15B7D195E2D33001065 /* Pods-SVSwiper_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SVSwiper_Tests-dummy.m"; sourceTree = "<group>"; };
 		1CF9F796BBFCF646751EB26F9354BDC7 /* Pods-SVSwiper_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SVSwiper_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		2644C4BEB25FCB7D26ADE361E1F4BBF0 /* SVSwiper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVSwiper-dummy.m"; sourceTree = "<group>"; };
+		2A025D85DB0DDFE7DA80F239F35929C0 /* SVSwiper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVSwiper-prefix.pch"; sourceTree = "<group>"; };
 		312B988EF117AE4DE76A268D970131FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		3B6B5DE9E461AEC43B13FC66584E1111 /* Pods_SVSwiper_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SVSwiper_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BACEA510AC595FB9CD0843FF87BD826 /* SwiperDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiperDelegate.swift; sourceTree = "<group>"; };
-		4282168E25AA516E00C9A19C /* SVContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVContent.swift; sourceTree = "<group>"; };
+		40E0D1ECACFF894CE03B63C48CE7580F /* SVSwiper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SVSwiper.modulemap; sourceTree = "<group>"; };
 		436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		49ADA7EF2F48657D1F47796AA9401D98 /* Pods-SVSwiper_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SVSwiper_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		4FFB10A6A0FB10D50F42AE7F80D2EFB0 /* SVSwiper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVSwiper-prefix.pch"; sourceTree = "<group>"; };
-		59DB984DA831979AC34388549475373C /* SVSwiper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVSwiper-umbrella.h"; sourceTree = "<group>"; };
-		609658821883DB9A12DE78B187E8B2BB /* SVSwiper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SVSwiper.modulemap; sourceTree = "<group>"; };
+		4BEF3E88D9F4125EBA2188BFC2A2C126 /* SVSwiper.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SVSwiper.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7289CCE33DEBD719EFB96188E2F1300C /* SVSwiper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVSwiper.debug.xcconfig; sourceTree = "<group>"; };
 		73ACA27008B3D56FBDED179B155DEB84 /* Pods-SVSwiper_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SVSwiper_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7620094A5140915FB7C99C0EC437D3F5 /* Pods-SVSwiper_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SVSwiper_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7730FF70A2A704BAB722F13B6CB2A082 /* Pods-SVSwiper_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SVSwiper_Tests-umbrella.h"; sourceTree = "<group>"; };
 		781426F46832257CBA7F77AFC12D43E6 /* Pods-SVSwiper_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SVSwiper_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		8563029F17AC9A0959CCE14853A7A7C7 /* SVSwiper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVSwiper.debug.xcconfig; sourceTree = "<group>"; };
+		80717AB9036C5BB0F44E6F8F54D8C33D /* Constraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		89D553572020F9E427DF6649048F3870 /* Pods-SVSwiper_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SVSwiper_Example-frameworks.sh"; sourceTree = "<group>"; };
-		8F33AE28187648C0AE4E9BB8BF6D4D4D /* SVSwiper.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SVSwiper.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		91119BC310458437CD6EBEFFFA1A307A /* SVSwiper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVSwiper.release.xcconfig; sourceTree = "<group>"; };
 		93BCC071E0CB93799FB915E510B0A5EF /* Pods-SVSwiper_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SVSwiper_Example-Info.plist"; sourceTree = "<group>"; };
+		95539EA5B0E38DE996C896BAAAF79440 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A1657E2C96BE93D1B81EB0B31D2D0214 /* SVSwiperController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SVSwiperController.swift; sourceTree = "<group>"; };
-		A671D0D6B34120E57BE147E3F8D4606D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		AB34B79DEDEDFA18970ADFBAC36E8181 /* SVSwiper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVSwiper-dummy.m"; sourceTree = "<group>"; };
-		AB433939A51871451389D933C86AE085 /* SVSwiper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVSwiper.release.xcconfig; sourceTree = "<group>"; };
+		A6FE9D3ED69FECECC3A5A837A0C4E045 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A70FF0DCF7E3CA3828DE927862740C8E /* SVSliderCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SVSliderCell.swift; sourceTree = "<group>"; };
 		B1F24D4F57AC86F11FC7CCB8211B69B1 /* Pods-SVSwiper_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SVSwiper_Tests.modulemap"; sourceTree = "<group>"; };
 		B3EF056A3B9CBE294E1B68C34DED71AE /* Pods-SVSwiper_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SVSwiper_Example.release.xcconfig"; sourceTree = "<group>"; };
+		B696D94D69A385B102BC86351A195062 /* SVSwiper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVSwiper-umbrella.h"; sourceTree = "<group>"; };
 		BAAD4423C429D9824CD2FF56C0C679F9 /* Pods-SVSwiper_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SVSwiper_Example-umbrella.h"; sourceTree = "<group>"; };
+		C172A4853F90B38A7D57167D78C139CA /* SVSwiperController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SVSwiperController.swift; sourceTree = "<group>"; };
 		DAD9CACB04F1564D9025B7052366E4D1 /* Pods-SVSwiper_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SVSwiper_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DE0E48267F28FDCB49E220666A504E7C /* Pods-SVSwiper_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SVSwiper_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		E67FC9F0484FDBB9AB47E8EBB1D86AD4 /* SVSwiper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SVSwiper-Info.plist"; sourceTree = "<group>"; };
+		DF0E49771530AB225709551D144139E4 /* SwiperDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiperDelegate.swift; sourceTree = "<group>"; };
 		E97AA7ECDD2131F93D78B1E7E263B29E /* Pods-SVSwiper_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SVSwiper_Example.modulemap"; sourceTree = "<group>"; };
 		EABCF09B125A7BF313C1CAC0A399649D /* Pods-SVSwiper_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SVSwiper_Example-dummy.m"; sourceTree = "<group>"; };
 		EC8B80DE2212859995DE9E263D697266 /* SVSwiper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SVSwiper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6E4C96DC26F9B8B34F999EF8CA5B144 /* Pods-SVSwiper_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SVSwiper_Tests-Info.plist"; sourceTree = "<group>"; };
+		F81BB0A89B494E96E93373438D58C842 /* SVSwiper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SVSwiper-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,20 +91,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A763E0E7199E0062DB3EC2771D79A1FF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F2145298A7137CFB199066B0F88913C9 /* Foundation.framework in Frameworks */,
-				BA6A372F9F8C1A0441673EEFFDE1A659 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BA8B3E2F3F6A5A344CB1C6472677360C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EBA849C535D8DD7536E0E7CA9D40F758 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C770551AB926F75206DDBB9948F2900D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC10FD2A4CF5D2F6180543BF4CC29067 /* Foundation.framework in Frameworks */,
+				C4BED9046E2439F75E84F746BD4D5576 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,59 +136,55 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4282169925AA5AAA00C9A19C /* SVHelpers */ = {
+		23C597347B7D199A1917F73831BE2512 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0194BB28F82AA9F356DB03D9B5C529EB /* Constraints.swift */,
-			);
-			path = SVHelpers;
-			sourceTree = "<group>";
-		};
-		4282169D25AA5AF300C9A19C /* SVControllers */ = {
-			isa = PBXGroup;
-			children = (
-				A1657E2C96BE93D1B81EB0B31D2D0214 /* SVSwiperController.swift */,
-			);
-			path = SVControllers;
-			sourceTree = "<group>";
-		};
-		4282169E25AA5B0500C9A19C /* SVModels */ = {
-			isa = PBXGroup;
-			children = (
-				4282168E25AA516E00C9A19C /* SVContent.swift */,
-			);
-			path = SVModels;
-			sourceTree = "<group>";
-		};
-		4282169F25AA5B1300C9A19C /* SVDelegates */ = {
-			isa = PBXGroup;
-			children = (
-				3BACEA510AC595FB9CD0843FF87BD826 /* SwiperDelegate.swift */,
-			);
-			path = SVDelegates;
-			sourceTree = "<group>";
-		};
-		42C7D1289403AB9D3E22B5C303D2FE7C /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				609658821883DB9A12DE78B187E8B2BB /* SVSwiper.modulemap */,
-				AB34B79DEDEDFA18970ADFBAC36E8181 /* SVSwiper-dummy.m */,
-				E67FC9F0484FDBB9AB47E8EBB1D86AD4 /* SVSwiper-Info.plist */,
-				4FFB10A6A0FB10D50F42AE7F80D2EFB0 /* SVSwiper-prefix.pch */,
-				59DB984DA831979AC34388549475373C /* SVSwiper-umbrella.h */,
-				8563029F17AC9A0959CCE14853A7A7C7 /* SVSwiper.debug.xcconfig */,
-				AB433939A51871451389D933C86AE085 /* SVSwiper.release.xcconfig */,
+				40E0D1ECACFF894CE03B63C48CE7580F /* SVSwiper.modulemap */,
+				2644C4BEB25FCB7D26ADE361E1F4BBF0 /* SVSwiper-dummy.m */,
+				F81BB0A89B494E96E93373438D58C842 /* SVSwiper-Info.plist */,
+				2A025D85DB0DDFE7DA80F239F35929C0 /* SVSwiper-prefix.pch */,
+				B696D94D69A385B102BC86351A195062 /* SVSwiper-umbrella.h */,
+				7289CCE33DEBD719EFB96188E2F1300C /* SVSwiper.debug.xcconfig */,
+				91119BC310458437CD6EBEFFFA1A307A /* SVSwiper.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/SVSwiper";
 			sourceTree = "<group>";
 		};
-		55A01AE484936C8F54CE6EBE4E201A2E /* Development Pods */ = {
+		517E61B0DAE1EB42F343D834BFF80380 /* SVHelpers */ = {
 			isa = PBXGroup;
 			children = (
-				A5ACB905B7ACD18801456EC797749984 /* SVSwiper */,
+				80717AB9036C5BB0F44E6F8F54D8C33D /* Constraints.swift */,
 			);
-			name = "Development Pods";
+			name = SVHelpers;
+			path = SVSwiper/Classes/SVHelpers;
+			sourceTree = "<group>";
+		};
+		5CA2124DCE86DC2662BF473BBF50D64E /* SVModels */ = {
+			isa = PBXGroup;
+			children = (
+				069271EA65E3B8D5E4FDE071078E36F3 /* SVContent.swift */,
+			);
+			name = SVModels;
+			path = SVSwiper/Classes/SVModels;
+			sourceTree = "<group>";
+		};
+		5EF00F96FC1530EC7ECFA677F719C6F9 /* SVControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C172A4853F90B38A7D57167D78C139CA /* SVSwiperController.swift */,
+			);
+			name = SVControllers;
+			path = SVSwiper/Classes/SVControllers;
+			sourceTree = "<group>";
+		};
+		6065C1F1A6DF4057C4C713D6C046ACB0 /* SVViews */ = {
+			isa = PBXGroup;
+			children = (
+				A70FF0DCF7E3CA3828DE927862740C8E /* SVSliderCell.swift */,
+			);
+			name = SVViews;
+			path = SVSwiper/Classes/SVViews;
 			sourceTree = "<group>";
 		};
 		93E8A5812C195DD5104E9EA1AAD7308F /* Products */ = {
@@ -199,28 +197,36 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9B07FE5DD3DFC4397E522ABF2E64D3B8 /* Pod */ = {
+		A3B099B4E6E8B9DF1F4B9F68C64A0FCC /* SVSwiper */ = {
 			isa = PBXGroup;
 			children = (
-				A671D0D6B34120E57BE147E3F8D4606D /* LICENSE */,
-				0202270ED71764BEDA2B38853E487DFD /* README.md */,
-				8F33AE28187648C0AE4E9BB8BF6D4D4D /* SVSwiper.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		A5ACB905B7ACD18801456EC797749984 /* SVSwiper */ = {
-			isa = PBXGroup;
-			children = (
-				4282169F25AA5B1300C9A19C /* SVDelegates */,
-				4282169E25AA5B0500C9A19C /* SVModels */,
-				4282169D25AA5AF300C9A19C /* SVControllers */,
-				4282169925AA5AAA00C9A19C /* SVHelpers */,
-				9B07FE5DD3DFC4397E522ABF2E64D3B8 /* Pod */,
-				42C7D1289403AB9D3E22B5C303D2FE7C /* Support Files */,
+				D49D071F98B853421AB0EFE4BD3A7B23 /* Pod */,
+				23C597347B7D199A1917F73831BE2512 /* Support Files */,
+				5EF00F96FC1530EC7ECFA677F719C6F9 /* SVControllers */,
+				BF3933A21EDFA4CCD86998C41481FE5C /* SVDelegates */,
+				517E61B0DAE1EB42F343D834BFF80380 /* SVHelpers */,
+				5CA2124DCE86DC2662BF473BBF50D64E /* SVModels */,
+				6065C1F1A6DF4057C4C713D6C046ACB0 /* SVViews */,
 			);
 			name = SVSwiper;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		B398F3F0C7FF478C952DC0656E0A69DB /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A3B099B4E6E8B9DF1F4B9F68C64A0FCC /* SVSwiper */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		BF3933A21EDFA4CCD86998C41481FE5C /* SVDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				DF0E49771530AB225709551D144139E4 /* SwiperDelegate.swift */,
+			);
+			name = SVDelegates;
+			path = SVSwiper/Classes/SVDelegates;
 			sourceTree = "<group>";
 		};
 		BF7948F2CB61975F33708C663DB5FF19 /* Targets Support Files */ = {
@@ -236,11 +242,21 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				55A01AE484936C8F54CE6EBE4E201A2E /* Development Pods */,
+				B398F3F0C7FF478C952DC0656E0A69DB /* Development Pods */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
 				93E8A5812C195DD5104E9EA1AAD7308F /* Products */,
 				BF7948F2CB61975F33708C663DB5FF19 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D49D071F98B853421AB0EFE4BD3A7B23 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				95539EA5B0E38DE996C896BAAAF79440 /* LICENSE */,
+				A6FE9D3ED69FECECC3A5A837A0C4E045 /* README.md */,
+				4BEF3E88D9F4125EBA2188BFC2A2C126 /* SVSwiper.podspec */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		E2983683FD097A93297E2F5D4E382B36 /* iOS */ = {
@@ -279,19 +295,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8B1D69531404A744A5021FF51B71F291 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6330C9C1258C0CEE7870FA47990AA9DB /* SVSwiper-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BE0CC719CBFAE905A5A1605DC097F3B4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				501B6FB7CFDF0E7953C2CEA30EE4A5F1 /* Pods-SVSwiper_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E94F73739B77301B8980F26EBEDD7B1D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B0BEA4E9A60ADA0EFF879B4F94E57C9 /* SVSwiper-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +326,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				CCFBC2786A83D37F5024C3140F906917 /* PBXTargetDependency */,
+				0F1330F4C4431A9C1D49D015E0E16EC4 /* PBXTargetDependency */,
 			);
 			name = "Pods-SVSwiper_Example";
 			productName = "Pods-SVSwiper_Example";
@@ -319,12 +335,12 @@
 		};
 		6C9B171FAACC63B12BAEFFC1D5015D14 /* SVSwiper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA316A59E25C7711D326424A57200362 /* Build configuration list for PBXNativeTarget "SVSwiper" */;
+			buildConfigurationList = 41567291336606964B387EA24940B73B /* Build configuration list for PBXNativeTarget "SVSwiper" */;
 			buildPhases = (
-				8B1D69531404A744A5021FF51B71F291 /* Headers */,
-				C655F7925F5B9F40BB866DB52453DDE4 /* Sources */,
-				A763E0E7199E0062DB3EC2771D79A1FF /* Frameworks */,
-				89B0BC8A68A144912F3044246378B98E /* Resources */,
+				E94F73739B77301B8980F26EBEDD7B1D /* Headers */,
+				7D199F6B3925A1ACE0E1A1A330EB8DA4 /* Sources */,
+				C770551AB926F75206DDBB9948F2900D /* Frameworks */,
+				15F4936279194699C5DEBC0C59E34459 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -347,7 +363,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				03C0F5529D6614CCBCBDB9C51D5F180A /* PBXTargetDependency */,
+				E5E6944F2992F02951962431710C0385 /* PBXTargetDependency */,
 			);
 			name = "Pods-SVSwiper_Tests";
 			productName = "Pods-SVSwiper_Tests";
@@ -361,7 +377,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					6C9B171FAACC63B12BAEFFC1D5015D14 = {
 						LastSwiftMigration = 1230;
@@ -396,7 +412,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		89B0BC8A68A144912F3044246378B98E /* Resources */ = {
+		15F4936279194699C5DEBC0C59E34459 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -413,23 +429,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7D199F6B3925A1ACE0E1A1A330EB8DA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4A923B581ED2437E986070517D3EB2D /* Constraints.swift in Sources */,
+				1B63007667A8506A7D765403F632DD8F /* SVContent.swift in Sources */,
+				78154FA58FBAB88061A405FBA93284A1 /* SVSliderCell.swift in Sources */,
+				2FD325DC3436FE8B0F94FD92437AFA0B /* SVSwiper-dummy.m in Sources */,
+				525C30AB82E63C5AEAD61B2C67D250AF /* SVSwiperController.swift in Sources */,
+				42231FC51EEE0FAE711999B4CE886F94 /* SwiperDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AEE30F59F7AB44E03DE37523E1E537C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				08E2CF4E7E9215ED7CF2267637751B9B /* Pods-SVSwiper_Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C655F7925F5B9F40BB866DB52453DDE4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ADECAB2902EA3AB6B259430D73191808 /* Constraints.swift in Sources */,
-				0F6920CD0AF7F17F243895DA1A89D4FA /* SVSwiper-dummy.m in Sources */,
-				4282168F25AA516E00C9A19C /* SVContent.swift in Sources */,
-				810747FED9691C6D31A883006111AC2E /* SVSwiperController.swift in Sources */,
-				62F9C60B7D6D27B660D7CCF484E96E6B /* SwiperDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,17 +461,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		03C0F5529D6614CCBCBDB9C51D5F180A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-SVSwiper_Example";
-			target = 6970EDC76240751E3FA84D7F301E466A /* Pods-SVSwiper_Example */;
-			targetProxy = F496AF37C1D642EF66FE600C9FF18F81 /* PBXContainerItemProxy */;
-		};
-		CCFBC2786A83D37F5024C3140F906917 /* PBXTargetDependency */ = {
+		0F1330F4C4431A9C1D49D015E0E16EC4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SVSwiper;
 			target = 6C9B171FAACC63B12BAEFFC1D5015D14 /* SVSwiper */;
-			targetProxy = DD72C2333C096FD39EE5867BB3B4307D /* PBXContainerItemProxy */;
+			targetProxy = BA8A592A02D1D750C0E6F4B4D4ED0D31 /* PBXContainerItemProxy */;
+		};
+		E5E6944F2992F02951962431710C0385 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-SVSwiper_Example";
+			target = 6970EDC76240751E3FA84D7F301E466A /* Pods-SVSwiper_Example */;
+			targetProxy = 0C9E7B59232606A58E78C6C26C1BB589 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -485,6 +502,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -528,7 +546,6 @@
 			baseConfigurationReference = DE0E48267F28FDCB49E220666A504E7C /* Pods-SVSwiper_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -563,7 +580,6 @@
 			baseConfigurationReference = 73ACA27008B3D56FBDED179B155DEB84 /* Pods-SVSwiper_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -593,11 +609,10 @@
 			};
 			name = Debug;
 		};
-		5736D3C3B1F1FFA960799FB3CDD050F7 /* Release */ = {
+		500A190756EF878E4C19A058C179B916 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB433939A51871451389D933C86AE085 /* SVSwiper.release.xcconfig */;
+			baseConfigurationReference = 91119BC310458437CD6EBEFFFA1A307A /* SVSwiper.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -611,7 +626,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SVSwiper/SVSwiper-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SVSwiper/SVSwiper-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SVSwiper/SVSwiper.modulemap";
 				PRODUCT_MODULE_NAME = SVSwiper;
@@ -632,7 +647,6 @@
 			baseConfigurationReference = 1CF9F796BBFCF646751EB26F9354BDC7 /* Pods-SVSwiper_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -668,7 +682,6 @@
 			baseConfigurationReference = B3EF056A3B9CBE294E1B68C34DED71AE /* Pods-SVSwiper_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -699,11 +712,10 @@
 			};
 			name = Release;
 		};
-		D3E85B00D4400AF1C6BAFDC4FB627FAD /* Debug */ = {
+		ECE6622C0AF4D79AA48C16A8397827DA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8563029F17AC9A0959CCE14853A7A7C7 /* SVSwiper.debug.xcconfig */;
+			baseConfigurationReference = 7289CCE33DEBD719EFB96188E2F1300C /* SVSwiper.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -717,7 +729,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SVSwiper/SVSwiper-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SVSwiper/SVSwiper-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SVSwiper/SVSwiper.modulemap";
 				PRODUCT_MODULE_NAME = SVSwiper;
@@ -758,6 +770,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -794,6 +807,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		41567291336606964B387EA24940B73B /* Build configuration list for PBXNativeTarget "SVSwiper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECE6622C0AF4D79AA48C16A8397827DA /* Debug */,
+				500A190756EF878E4C19A058C179B916 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -808,15 +830,6 @@
 			buildConfigurations = (
 				1BF72D32276CABCF6F9E18E73CE4EF6D /* Debug */,
 				88F67EA4C82C93959817788B09C4A52D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DA316A59E25C7711D326424A57200362 /* Build configuration list for PBXNativeTarget "SVSwiper" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D3E85B00D4400AF1C6BAFDC4FB627FAD /* Debug */,
-				5736D3C3B1F1FFA960799FB3CDD050F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

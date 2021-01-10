@@ -11,9 +11,7 @@ class ViewController: UIViewController {
             .init(title: "Invest in Stocks", description: "We provide great insights"),
             .init(title: "Develop Connections", description: "Conntect with community of experts in the field of stock market"),
         ])
-        self.addChild(controller)
-        let sliderView = controller.view ?? UIView()
-        self.view.addSubview(sliderView)
-        sliderView.svFillSuperView()
+        controller.configureSlider(parentViewController: self)
     }
 }
+

@@ -24,15 +24,26 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
     private var details: [SVContent]?
     private var titleFont: UIFont?
     private var descriptionFont: UIFont?
+    private var titles: [String]?
+    private var descriptions: [String]?
     
     public init(backgroundColor: UIColor, details: [SVContent], titleFont: UIFont = UIFont.boldSystemFont(ofSize: 14), descriptionFont: UIFont = UIFont.systemFont(ofSize: 12)) {
         self.backgroundColor = backgroundColor
         self.details = details
         self.titleFont = titleFont
         self.descriptionFont = descriptionFont
+        self.titles = details.compactMap { (detail) in return detail.svTitle }
+        self.descriptions = details.compactMap { (detail) in return detail.svDescription }
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         super.init(collectionViewLayout: layout)
+    }
+    
+    public func configureSlider(parentViewController: UIViewController) {
+        parentViewController.addChildViewController(self)
+        let sliderView = self.view ?? UIView()
+        parentViewController.view.addSubview(sliderView)
+        sliderView.svFillSuperView()
     }
     
     fileprivate func setupPageControl() {
@@ -44,7 +55,7 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
     
     private func collectionViewSettings() {
         self.collectionView?.isPagingEnabled = true
-        self.collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: sliderCellid)
+        self.collectionView?.register(SVSliderCell.self, forCellWithReuseIdentifier: sliderCellid)
         self.collectionView?.showsHorizontalScrollIndicator = false
         self.collectionView?.backgroundColor = self.backgroundColor
         setupPageControl()
@@ -78,9 +89,11 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
     }
     
     public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-         let cell = self.collectionView?.dequeueReusableCell(withReuseIdentifier: sliderCellid, for: indexPath)
-        cell?.backgroundColor = (indexPath.item % 2 == 0) ? .white: .blue
-        return cell ?? UICollectionViewCell(frame: .zero)
+         let cell = self.collectionView?.dequeueReusableCell(withReuseIdentifier: sliderCellid, for: indexPath) as! SVSliderCell
+        cell.backgroundColor = self.backgroundColor
+        cell.contentTitle = self.titles?[indexPath.item]
+        cell.contentDescription = self.descriptions?[indexPath.item]
+        return cell 
     }
     
     required init?(coder: NSCoder) {
@@ -88,4 +101,3 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
     }
     
 }
-

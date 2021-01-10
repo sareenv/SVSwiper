@@ -19,7 +19,7 @@
   "platforms": {
     "ios": "11.0"
   },
-  "source_files": "SVSwiper/Classes/*.swift",
+  "source_files": "SVSwiper/Classes/**/*.swift",
   "frameworks": "UIKit",
   "swift_version": "4.0"
 }
