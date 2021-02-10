@@ -12,7 +12,7 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
     lazy var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.currentPage = 0
-        pageControl.numberOfPages = 3
+        pageControl.numberOfPages = details?.count ?? 0
         pageControl.currentPageIndicatorTintColor = .systemRed
         pageControl.pageIndicatorTintColor = .systemGray
         pageControl.translatesAutoresizingMaskIntoConstraints = false
@@ -26,6 +26,8 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
     private var descriptionFont: UIFont?
     private var titles: [String]?
     private var descriptions: [String]?
+    private var images: [UIImage]?
+    
     
     public init(backgroundColor: UIColor, details: [SVContent], titleFont: UIFont = UIFont.boldSystemFont(ofSize: 14), descriptionFont: UIFont = UIFont.systemFont(ofSize: 12)) {
         self.backgroundColor = backgroundColor
@@ -34,13 +36,16 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
         self.descriptionFont = descriptionFont
         self.titles = details.compactMap { (detail) in return detail.svTitle }
         self.descriptions = details.compactMap { (detail) in return detail.svDescription }
+        self.images = details.compactMap({ (detail) in
+            return detail.svImage
+        })
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         super.init(collectionViewLayout: layout)
     }
     
     public func configureSlider(parentViewController: UIViewController) {
-        parentViewController.addChildViewController(self)
+        parentViewController.addChild(self)
         let sliderView = self.view ?? UIView()
         parentViewController.view.addSubview(sliderView)
         sliderView.svFillSuperView()
@@ -93,6 +98,7 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
         cell.backgroundColor = self.backgroundColor
         cell.contentTitle = self.titles?[indexPath.item]
         cell.contentDescription = self.descriptions?[indexPath.item]
+        cell.sliderImage = self.images?[indexPath.item]
         return cell 
     }
     
