@@ -68,7 +68,7 @@ public class SVSliderCell: UICollectionViewCell {
     private func setupVStackConstraints() {
         vStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         vStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
-        vStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
+        vStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
     }
     
     private func setupDetailsLabels() {
