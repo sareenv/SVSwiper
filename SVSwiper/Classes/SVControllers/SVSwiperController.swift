@@ -13,10 +13,21 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
         let pageControl = UIPageControl()
         pageControl.currentPage = 0
         pageControl.numberOfPages = details?.count ?? 0
-        pageControl.currentPageIndicatorTintColor = .systemRed
+        pageControl.currentPageIndicatorTintColor = .systemPurple
         pageControl.pageIndicatorTintColor = .systemGray
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         return pageControl
+    }()
+    
+    lazy var welcomeButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Get Started", for: .normal)
+        button.backgroundColor = .systemPurple
+        button.setTitleColor(.white, for: .normal)
+        button.isHidden = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 5
+        return button
     }()
     
     fileprivate let sliderCellid = "sliderCellid"
@@ -42,6 +53,13 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         super.init(collectionViewLayout: layout)
+        showButton(frontParentController: UIViewController())
+    }
+    
+    fileprivate func showButton( frontParentController: UIViewController) {
+        self.collectionView.addSubview(welcomeButton)
+        welcomeButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        welcomeButton.svAnchor(topAnchor: nil, bottomAnchor: self.view.bottomAnchor, leadingAnchor: self.view.leadingAnchor, trailingAnchor: self.view.trailingAnchor, padding: .init(top: 0, left: 10, bottom: -60, right: -10))
     }
     
     public func configureSlider(parentViewController: UIViewController) {
@@ -81,8 +99,18 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
         let width = scrollView.frame.width
         let horizontalCenter = width / 2
         let currentPage = Int(offSet + horizontalCenter) / Int(width)
-//        getStartedButton.isHidden = (currentPage == 3) ? false : true
         pageControl.currentPage = currentPage
+        if let count = details?.count {
+            let countIndex = count - 1
+            if(currentPage == countIndex) {
+                welcomeButton.isHidden = false
+                welcomeButton.isUserInteractionEnabled = true
+            } else {
+                welcomeButton.isHidden = true
+                welcomeButton.isUserInteractionEnabled = false
+            }
+        }
+        
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
