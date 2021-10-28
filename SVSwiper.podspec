@@ -26,10 +26,13 @@ Pod::Spec.new do |s|
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Vinayak' => 'sareenv026@outlook.com' }
-  s.source           = { :git => 'https://github.com/sareenv/SVSwiper', :tag => s.version.to_s }
-  s.ios.deployment_target = '8.0'
-  s.source_files = 'SVSwiper/Classes/*.swift'
+  s.source           = { :git => 'https://github.com/sareenv/SVSwiper.git', :tag => s.version.to_s }
+  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
+  s.ios.deployment_target = '11.0'
+
+  s.source_files = 'SVSwiper/Classes/**/*.swift'
+  
   # s.resource_bundles = {
   #   'SVSwiper' => ['SVSwiper/Assets/*.png']
   # }

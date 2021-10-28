@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## SVSwiper
 
-Copyright (c) 2019 buggyman026@gmail.com <sareenv@uni.coventry.ac.uk>
+Copyright (c) 2019 Vinayak <sareenv@uni.coventry.ac.uk>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
