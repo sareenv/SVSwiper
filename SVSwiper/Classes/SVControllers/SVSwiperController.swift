@@ -122,12 +122,12 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
     }
     
     public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-         let cell = self.collectionView?.dequeueReusableCell(withReuseIdentifier: sliderCellid, for: indexPath) as! SVSliderCell
-        cell.backgroundColor = self.backgroundColor
-        cell.contentTitle = self.titles?[indexPath.item]
-        cell.contentDescription = self.descriptions?[indexPath.item]
-        cell.sliderImage = self.images?[indexPath.item]
-        return cell 
+         let cell = self.collectionView?.dequeueReusableCell(withReuseIdentifier: sliderCellid, for: indexPath) as? SVSliderCell
+        cell?.backgroundColor = self.backgroundColor
+        cell?.contentTitle = self.titles?[indexPath.item]
+        cell?.contentDescription = self.descriptions?[indexPath.item]
+        cell?.sliderImage = self.images?[indexPath.item]
+        return cell ?? UICollectionViewCell()
     }
     
     required init?(coder: NSCoder) {

@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SVSwiper'
   s.version          = '0.1.1'
-  s.summary          = 'SVSwiper framework allows users to have navigation within a single Controller'
+  s.summary          = 'SVSwiper framework allows developers to create onboarding screens within a fewer lines of code'
   s.swift_version    = '4.0'
 
 # This description is used to generate tags and improve search results.
