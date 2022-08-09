@@ -10,6 +10,18 @@ import UIKit
 // Credits: Brian Voong showed a way to use it. This extension is originally wrriten by Mr. Voong and I am using it for adding constraints in code easily.
 
 
+
+public extension UIViewController {
+        
+  func removeChild() {
+    self.children.forEach {
+      $0.willMove(toParent: nil)
+      $0.view.removeFromSuperview()
+      $0.removeFromParent()
+    }
+  }
+}
+
 public extension UIView{
     @available(iOS 9.0, *)
         func svFillSuperView (top: CGFloat=0, bottom: CGFloat=0, leading: CGFloat=0, trailing: CGFloat=0){

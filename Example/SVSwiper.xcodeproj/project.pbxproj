@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		422A4E432884AEBD00E4D9EE /* Pods_SVSwiper_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39441026DC7C122270A21CDF /* Pods_SVSwiper_Example.framework */; };
 		422A4E442884AEBD00E4D9EE /* Pods_SVSwiper_Example.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39441026DC7C122270A21CDF /* Pods_SVSwiper_Example.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4234293E2884B0D8000FC40D /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4234293D2884B0D8000FC40D /* DetailsController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -47,7 +46,6 @@
 		287DAED347726450A0665099 /* Pods-SVSwiper_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SVSwiper_Example.debug.xcconfig"; path = "Target Support Files/Pods-SVSwiper_Example/Pods-SVSwiper_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		2F0B40CF705C2B9EA64F64BA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		39441026DC7C122270A21CDF /* Pods_SVSwiper_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SVSwiper_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4234293D2884B0D8000FC40D /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
 		47FCE380B8B82D3F096A5BF7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SVSwiper_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SVSwiper_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				4234293D2884B0D8000FC40D /* DetailsController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -352,7 +349,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				4234293E2884B0D8000FC40D /* DetailsController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,10 @@ import UIKit
 
 public class SVSwiperController: UICollectionViewController, UICollectionViewDelegateFlowLayout{
     
+    public var delegate: SVSwiperDelegate?
+   
     lazy var pageControl: UIPageControl = {
+        
         let pageControl = UIPageControl()
         pageControl.currentPage = 0
         pageControl.numberOfPages = details?.count ?? 0
@@ -56,17 +59,48 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
         showButton(frontParentController: UIViewController())
     }
     
+    @objc func handleWelcomeBtn() {
+        let userDefaults: UserDefaults =  UserDefaults.standard
+        userDefaults.set(true, forKey: "presentedSVController")
+        
+        if let secondaryController = self.secondaryController {
+            UIApplication.shared.windows.first?.rootViewController?.removeChild()
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+            UIApplication.shared.windows.first?.rootViewController = secondaryController
+        }
+       
+    }
+    
     fileprivate func showButton( frontParentController: UIViewController) {
         self.collectionView.addSubview(welcomeButton)
         welcomeButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        welcomeButton.addTarget(self, action: #selector(handleWelcomeBtn), for: .allTouchEvents)
         welcomeButton.svAnchor(topAnchor: nil, bottomAnchor: self.view.bottomAnchor, leadingAnchor: self.view.leadingAnchor, trailingAnchor: self.view.trailingAnchor, padding: .init(top: 0, left: 10, bottom: -60, right: -10))
     }
     
-    public func configureSlider(parentViewController: UIViewController) {
-        parentViewController.addChild(self)
-        let sliderView = self.view ?? UIView()
-        parentViewController.view.addSubview(sliderView)
-        sliderView.svFillSuperView()
+    
+
+    lazy var secondaryController: UIViewController? = nil
+    lazy var parentController: UIViewController? = nil
+    
+    public func configureSlider(parentViewController: UIViewController, secondaryController: UIViewController? = nil
+        ) {
+        
+        self.secondaryController = secondaryController
+        self.parentController = parentController
+        let result: Bool = UserDefaults.standard.bool(forKey: "presentedSVController")
+        if(result == false) {
+            parentViewController.addChild(self)
+            let sliderView = self.view ?? UIView()
+            parentViewController.view.addSubview(sliderView)
+            sliderView.svFillSuperView()
+        }
+        
+        if let secondaryController = secondaryController {
+            if(result == true) {
+                UIApplication.shared.windows.first?.rootViewController = secondaryController
+            }
+        }
     }
     
     fileprivate func setupPageControl() {

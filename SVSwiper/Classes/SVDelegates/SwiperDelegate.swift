@@ -7,8 +7,9 @@
 
 import Foundation
 
-@objc public protocol SVSwiperDelegate {
+@objc public protocol SVSwiperDelegate: AnyObject {
     @objc optional func generateRadomContent() -> [SVContent]
     @objc optional func sizeForSlider(slideSize: CGSize)
-    func isPagerEnabledForSlider(isPagerEnabled: Bool)
+    @objc optional func isPagerEnabledForSlider(isPagerEnabled: Bool)
+    @objc optional func backgroundColorForSwiper() -> UIColor
 }
