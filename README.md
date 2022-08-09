@@ -20,7 +20,6 @@ pod 'SVSwiper'
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ```
-
 import UIKit
 import SVSwiper
 
@@ -41,12 +40,9 @@ class ViewController: UIViewController {
 ```
 
 ## Author
-
-Vinayak is the author for this repository, If you have any suggestion / recommendations please feel free. sareenv026@outlook.com is my email. 
+Vinayak is the author for this repository, If you have any suggestion / recommendations please feel free to contact me at sareenv026@outlook.com 
 
 ## License
-
-
 Copyright (c) 2019 Vinayak <sareenv026@outlook.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
