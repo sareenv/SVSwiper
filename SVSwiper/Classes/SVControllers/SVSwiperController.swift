@@ -64,7 +64,7 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
     }
     
     public func configureSlider(parentViewController: UIViewController) {
-        parentViewController.addChildController(self)
+        parentViewController.addChild(self)
         let sliderView = self.view ?? UIView()
         parentViewController.view.addSubview(sliderView)
         sliderView.svFillSuperView()
