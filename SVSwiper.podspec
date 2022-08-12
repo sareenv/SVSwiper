@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SVSwiper'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'SVSwiper framework allows developers to create onboarding screens within a fewer lines of code'
   s.swift_version    = '4.0'
 

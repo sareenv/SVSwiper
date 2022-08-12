@@ -57,11 +57,9 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
     }
     
     fileprivate func showButton( frontParentController: UIViewController) {
-        if let collectionView = self.collectionView  {
-            collectionView.addSubview(welcomeButton)
-            welcomeButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-            welcomeButton.svAnchor(topAnchor: nil, bottomAnchor: self.view.bottomAnchor, leadingAnchor: self.view.leadingAnchor, trailingAnchor: self.view.trailingAnchor, padding: .init(top: 0, left: 10, bottom: -60, right: -10))
-        }
+        collectionView?.addSubview(welcomeButton)
+        welcomeButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        welcomeButton.svAnchor(topAnchor: nil, bottomAnchor: self.view.bottomAnchor, leadingAnchor: self.view.leadingAnchor, trailingAnchor: self.view.trailingAnchor, padding: .init(top: 0, left: 10, bottom: -60, right: -10))
         
     }
     
