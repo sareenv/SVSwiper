@@ -19,11 +19,11 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-'SVSwiper framework allows users to have navigation within a single controller. This library has delegate methods which allows users to customise the navigation options such as menubar tintColor, titles for controllers and other properties'
+'SVSwiper library uses core UIKit components and provides custom onBoarding screens with many customisation options.'
                        DESC
 
   s.homepage         = 'https://github.com/sareenv/SVSwiper'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.screenshots     = 'https://raw.githubusercontent.com/sareenv/SVSwiper/master/assets/poster.png'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Vinayak' => 'sareenv026@outlook.com' }
   s.source           = { :git => 'https://github.com/sareenv/SVSwiper.git', :tag => s.version.to_s }
