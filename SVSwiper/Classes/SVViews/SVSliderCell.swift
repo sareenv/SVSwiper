@@ -28,14 +28,14 @@ public class SVSliderCell: UICollectionViewCell {
     
     lazy var contentTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.font = UIFont.boldSystemFont(ofSize: 21)
         label.numberOfLines = 0
         return label
     }()
     
     lazy var contentDescriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = UIFont.systemFont(ofSize: 18)
         label.numberOfLines = 0
         return label
     }()

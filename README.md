@@ -1,5 +1,5 @@
 # SVSwiper Onboarding iOS Library
-
+<img src="./assets/poster.png">
 SVSwiper library uses core UIKit components and provides custom onBoarding screens with many customisation options. SVSwiper provides various delegate methods to customise the navigation according the needs of application. Any contributions towards this library are welcome. 
 
 [![Version](https://img.shields.io/cocoapods/v/SVSwiper.svg?style=flat)](https://cocoapods.org/pods/SVSwiper)
