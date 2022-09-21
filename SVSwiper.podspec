@@ -30,10 +30,6 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://www.sareenv.com'
   s.ios.deployment_target = '11.0'
   s.source_files = 'SVSwiper/Classes/**/*.swift'
-  
-  # s.resource_bundles = {
-  #   'SVSwiper' => ['SVSwiper/Assets/*.png']
-  # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
