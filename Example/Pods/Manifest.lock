@@ -1,5 +1,5 @@
 PODS:
-  - SVSwiper (0.1.0)
+  - SVSwiper (1.0.2)
 
 DEPENDENCIES:
   - SVSwiper (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SVSwiper: ab32cfaa0e62cb3e57a66507211dad3df20d16f3
+  SVSwiper: 4c020880396094c17f4f63326e03ddb93815462b
 
 PODFILE CHECKSUM: 6428dbe3b456ef6bc6cbe68332c5cd951eb101ad
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.11.3
