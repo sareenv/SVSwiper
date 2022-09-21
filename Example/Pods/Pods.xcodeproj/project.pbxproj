@@ -10,7 +10,6 @@
 		00A3CB87A0F60F2DF21FDD99C2579433 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
 		0FED94486463296FBE8C4155339E196B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
 		172FD7A5AAB3CA774151EB8A4AA150FA /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383EE67C0F12B61292518B2D9E06516 /* Constraints.swift */; };
-		1E4A6B2DACCFCD957816525FD0A17654 /* SVUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E84E6C869A35297E64C64C30287FF98 /* SVUtility.swift */; };
 		622BE794BF6A5A1B65CB9E2B07CF59A0 /* Pods-SVSwiper_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5DBB643B99E15B7D195E2D33001065 /* Pods-SVSwiper_Tests-dummy.m */; };
 		6335113320334A794476DCC43E290581 /* SVContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741818E9BA12B9AB67EF72DF77CF174 /* SVContent.swift */; };
 		813CCD054C1A5B0E98C9411940241DE5 /* SVSwiper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CEF1B600EA19CF044D82EF58AF83A6 /* SVSwiper-dummy.m */; };
@@ -44,19 +43,18 @@
 
 /* Begin PBXFileReference section */
 		0D6FACB74C55642F7F65C6EBCBE57D87 /* Pods-SVSwiper_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SVSwiper_Example"; path = Pods_SVSwiper_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E84E6C869A35297E64C64C30287FF98 /* SVUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SVUtility.swift; sourceTree = "<group>"; };
 		1313466D25D06D8EDD227D7B9A9A980A /* SVSwiper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SVSwiper.modulemap; sourceTree = "<group>"; };
 		1A5DBB643B99E15B7D195E2D33001065 /* Pods-SVSwiper_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SVSwiper_Tests-dummy.m"; sourceTree = "<group>"; };
 		1CF9F796BBFCF646751EB26F9354BDC7 /* Pods-SVSwiper_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SVSwiper_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		266DBB6D960BEA519D41C3D88C446C3C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		2871B596D2AFF40EB9480B163605C176 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		266DBB6D960BEA519D41C3D88C446C3C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2871B596D2AFF40EB9480B163605C176 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3B6B5DE9E461AEC43B13FC66584E1111 /* Pods-SVSwiper_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SVSwiper_Tests"; path = Pods_SVSwiper_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4383EE67C0F12B61292518B2D9E06516 /* Constraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		4737C18071F6A2C64D874A98A88D0F4F /* SVSwiper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVSwiper.debug.xcconfig; sourceTree = "<group>"; };
 		48F8D79F15FDB3B3A3BA3804669167C9 /* SVSwiperController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SVSwiperController.swift; sourceTree = "<group>"; };
 		49ADA7EF2F48657D1F47796AA9401D98 /* Pods-SVSwiper_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SVSwiper_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		582DDEB55B8EE46E9D6BF42E1A091510 /* SVSwiper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVSwiper.release.xcconfig; sourceTree = "<group>"; };
-		595D9BE057646FBE54C5FADD197528C7 /* SVSwiper.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SVSwiper.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		595D9BE057646FBE54C5FADD197528C7 /* SVSwiper.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SVSwiper.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		73ACA27008B3D56FBDED179B155DEB84 /* Pods-SVSwiper_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SVSwiper_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7620094A5140915FB7C99C0EC437D3F5 /* Pods-SVSwiper_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SVSwiper_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7730FF70A2A704BAB722F13B6CB2A082 /* Pods-SVSwiper_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SVSwiper_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -66,7 +64,7 @@
 		89D553572020F9E427DF6649048F3870 /* Pods-SVSwiper_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SVSwiper_Example-frameworks.sh"; sourceTree = "<group>"; };
 		93BCC071E0CB93799FB915E510B0A5EF /* Pods-SVSwiper_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SVSwiper_Example-Info.plist"; sourceTree = "<group>"; };
 		94CEF1B600EA19CF044D82EF58AF83A6 /* SVSwiper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVSwiper-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A86D4D9BC534FFCA1361B7244A0B7AFC /* SVSliderCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SVSliderCell.swift; sourceTree = "<group>"; };
 		B1F24D4F57AC86F11FC7CCB8211B69B1 /* Pods-SVSwiper_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SVSwiper_Tests.modulemap"; sourceTree = "<group>"; };
 		B3EF056A3B9CBE294E1B68C34DED71AE /* Pods-SVSwiper_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SVSwiper_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				4383EE67C0F12B61292518B2D9E06516 /* Constraints.swift */,
-				0E84E6C869A35297E64C64C30287FF98 /* SVUtility.swift */,
 			);
 			name = SVHelpers;
 			path = SVSwiper/Classes/SVHelpers;
@@ -444,7 +441,6 @@
 				CFF04B6AFF403A062DEE0D117F0CD9B5 /* SVSliderCell.swift in Sources */,
 				813CCD054C1A5B0E98C9411940241DE5 /* SVSwiper-dummy.m in Sources */,
 				B0F51E7AAA4FA6E84979A58D7632DE58 /* SVSwiperController.swift in Sources */,
-				1E4A6B2DACCFCD957816525FD0A17654 /* SVUtility.swift in Sources */,
 				9DC98410AF145BDB85372AD8868B444E /* SwiperDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -695,8 +691,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

@@ -83,7 +83,7 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
             UIApplication.shared.windows.first?.makeKeyAndVisible()
             return
         } else {
-            UIApplication.shared.windows.first?.rootViewController?.removeFromParent()
+            UIApplication.shared.windows.first?.rootViewController?.removeFromParentViewController()
             if let isNavigationSupported = isNavigationSupported {
                 if(isNavigationSupported == true) {
                     UIApplication.shared.windows.first?.rootViewController =
