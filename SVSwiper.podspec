@@ -1,9 +1,8 @@
 Pod::Spec.new do |s|
   s.name             = 'SVSwiper'
-  s.version          = '1.0.2'
+  s.version          = '2.0.1'
   s.summary          = 'SVSwiper framework allows developers to create onboarding screens within a fewer lines of code'
   s.swift_version    = '4.2'
-  
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -12,7 +11,9 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-'SVSwiper library provides custom onboarding screens with many customisation options.'
+'SVSwiper library provides custom onboarding screens with minimal effort. 
+   The library generates the swipable modern looking screen that provides custom 
+   experience to the clients of iOS Application.'
                        DESC
 
   s.homepage         = 'https://github.com/sareenv/SVSwiper'
