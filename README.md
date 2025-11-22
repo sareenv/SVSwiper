@@ -17,7 +17,7 @@ SVSwiper library uses core UIKit components and provides custom onBoarding scree
 🔒 **Type Safe** - Fully written in Swift with value types  
 🧪 **Tested** - Comprehensive unit test coverage  
 🎯 **Delegate Pattern** - Modern coordinator delegate for better control  
-🦋 **SwiftUI Support** - Native SwiftUI views for iOS 13+  
+🦋 **SwiftUI Support** - Native SwiftUI views for iOS 13+ with result builders  
 🔐 **Privacy Manifest** - Includes PrivacyInfo.xcprivacy for App Store compliance  
 
 ## Requirements
@@ -70,7 +70,9 @@ pod 'SVSwiper'
 
 ### SwiftUI (iOS 13+)
 
-For modern SwiftUI apps, use the native `SVSwiperView`:
+For modern SwiftUI apps, use the native `SVSwiperView` with **ultra-simple syntax**:
+
+#### Minimal Setup (Just Pass the Array!)
 
 ```swift
 import SwiftUI
@@ -81,31 +83,14 @@ struct ContentView: View {
     
     var body: some View {
         if showOnboarding {
-            SVSwiperView(
-                backgroundColor: .white,
-                details: [
-                    SVContent(
-                        title: "Welcome",
-                        description: "Get started with our amazing app",
-                        image: UIImage(named: "onboarding1")
-                    ),
-                    SVContent(
-                        title: "Discover",
-                        description: "Explore all the features",
-                        image: UIImage(named: "onboarding2")
-                    ),
-                    SVContent(
-                        title: "Get Started",
-                        description: "You're all set!",
-                        image: UIImage(named: "onboarding3")
-                    )
-                ],
-                titleFont: .system(size: 24, weight: .bold),
-                descriptionFont: .system(size: 16)
-            ) {
+            // Just pass your content array! ✨
+            SVSwiperView([
+                SVContent(title: "Welcome", description: "Get started", image: UIImage(named: "onboarding1")),
+                SVContent(title: "Discover", description: "Explore features", image: UIImage(named: "onboarding2")),
+                SVContent(title: "Get Started", description: "You're all set!", image: UIImage(named: "onboarding3"))
+            ]) {
                 showOnboarding = false
             }
-            .transition(.opacity)
         } else {
             MainAppView()
         }
@@ -113,7 +98,9 @@ struct ContentView: View {
 }
 ```
 
-#### Advanced SwiftUI Usage with Custom Styling
+#### Result Builder Syntax (SwiftUI-Native DSL)
+
+For a more declarative approach, use the result builder:
 
 ```swift
 struct ContentView: View {
@@ -121,11 +108,55 @@ struct ContentView: View {
     
     var body: some View {
         if showOnboarding {
+            SVSwiperView {
+                SVContent(
+                    title: "Welcome",
+                    description: "Get started with our amazing app",
+                    image: UIImage(named: "onboarding1")
+                )
+                SVContent(
+                    title: "Discover",
+                    description: "Explore all the features",
+                    image: UIImage(named: "onboarding2")
+                )
+                SVContent(
+                    title: "Get Started",
+                    description: "You're all set!",
+                    image: UIImage(named: "onboarding3")
+                )
+            } onComplete: {
+                withAnimation {
+                    showOnboarding = false
+                }
+            }
+        } else {
+            MainAppView()
+        }
+    }
+}
+```
+
+#### Advanced Customization
+
+```swift
+struct ContentView: View {
+    @State private var showOnboarding = true
+    
+    let contents = [
+        SVContent(title: "Maximise Profits", description: "Gain with our internal tools", image: UIImage(named: "onboarding1")),
+        SVContent(title: "Invest in Stocks", description: "We provide great insights", image: UIImage(named: "onboarding2")),
+        SVContent(title: "Develop Connections", description: "Connect with experts", image: UIImage(named: "onboarding3"))
+    ]
+    
+    var body: some View {
+        if showOnboarding {
             SVSwiperView(
+                contents,
                 backgroundColor: Color(uiColor: .systemBackground),
-                details: onboardingContent,
                 titleFont: .custom("YourFont-Bold", size: 28),
-                descriptionFont: .custom("YourFont-Regular", size: 17)
+                descriptionFont: .custom("YourFont-Regular", size: 17),
+                buttonColor: .blue,
+                buttonTitle: "Let's Go!"
             ) {
                 withAnimation {
                     showOnboarding = false
@@ -135,33 +166,40 @@ struct ContentView: View {
         } else {
             TabView {
                 HomeView()
-                    .tabItem {
-                        Label("Home", systemImage: "house")
-                    }
-                // Other tabs...
+                    .tabItem { Label("Home", systemImage: "house") }
             }
         }
     }
-    
-    private var onboardingContent: [SVContent] {
-        [
-            SVContent(
-                title: "Maximise Profits",
-                description: "Gain with our internal tools, we are here to support your company at every stage",
-                image: UIImage(named: "onboarding1")
-            ),
-            SVContent(
-                title: "Invest in Stocks",
-                description: "We provide great insights, on which stock to buy and sell at any moment of time",
-                image: UIImage(named: "onboarding2")
-            ),
-            SVContent(
-                title: "Develop Connections",
-                description: "Connect with community of experts in the field of stock market",
-                image: UIImage(named: "onboarding3")
-            )
-        ]
-    }
+}
+```
+
+#### Multiple Initialization Options
+
+```swift
+// 1. Simplest - Just the array
+SVSwiperView(contents) { }
+
+// 2. With customization
+SVSwiperView(contents, backgroundColor: .blue, buttonColor: .green) { }
+
+// 3. Result builder (DSL style)
+SVSwiperView {
+    SVContent(title: "Screen 1", description: "Description", image: nil)
+    SVContent(title: "Screen 2", description: "Description", image: nil)
+} onComplete: { }
+
+// 4. Full customization with result builder
+SVSwiperView(
+    backgroundColor: .white,
+    titleFont: .largeTitle,
+    descriptionFont: .body,
+    buttonColor: .purple,
+    buttonTitle: "Start Now"
+) {
+    SVContent(title: "Welcome", description: "Let's begin", image: nil)
+    SVContent(title: "Features", description: "Discover more", image: nil)
+} onComplete: {
+    print("Completed!")
 }
 ```
 
@@ -348,15 +386,29 @@ let controller = SVSwiperController(
 
 ### SVSwiperView (SwiftUI)
 
-Customize the SwiftUI view:
+Customize the SwiftUI view with multiple initialization options:
 
 ```swift
+// Simple - just pass the array
+SVSwiperView(contentArray) { }
+
+// With customization
 SVSwiperView(
-    backgroundColor: Color.white,         // Background color
-    details: contentArray,                // Array of SVContent
-    titleFont: .system(size: 24, weight: .bold),      // Title font
-    descriptionFont: .system(size: 16)    // Description font
+    contentArray,
+    backgroundColor: .white,
+    titleFont: .system(size: 24, weight: .bold),
+    descriptionFont: .system(size: 16),
+    buttonColor: .purple,
+    buttonTitle: "Get Started"
 ) {
+    // Completion handler
+}
+
+// Result builder syntax
+SVSwiperView {
+    SVContent(title: "Screen 1", description: "Text", image: nil)
+    SVContent(title: "Screen 2", description: "Text", image: nil)
+} onComplete: {
     // Completion handler
 }
 ```
@@ -404,9 +456,10 @@ if controller.shouldShowOnboarding() {
 
 ### New Features
 
-1. **SwiftUI Support** - Native SwiftUI views for iOS 13+
+1. **SwiftUI Support** - Native SwiftUI views with result builders for iOS 13+
 2. **Privacy Manifest** - Includes PrivacyInfo.xcprivacy for App Store compliance
 3. **Modern Coordinator Pattern** - Better separation of concerns
+4. **Result Builder API** - SwiftUI-native DSL for declaring content
 
 ### Recommended Updates
 
@@ -436,27 +489,43 @@ print(content.title)
 3. **Consider SwiftUI** for new projects:
 
 ```swift
-// New SwiftUI approach
-SVSwiperView(
-    backgroundColor: .white,
-    details: data
-) {
-    // Handle completion
-}
+// New SwiftUI approach (ultra-simple!)
+SVSwiperView(contents) { }
+
+// Or with result builder
+SVSwiperView {
+    SVContent(title: "Welcome", description: "Let's begin", image: nil)
+    SVContent(title: "Features", description: "Discover", image: nil)
+} onComplete: { }
 ```
 
 ## API Documentation
 
 ### SVSwiperView (SwiftUI)
 
-#### Initializer
+#### Simple Array Initializer
+```swift
+init(
+    _ details: [SVContent],
+    backgroundColor: Color = .white,
+    titleFont: Font = .system(size: 24, weight: .bold),
+    descriptionFont: Font = .system(size: 16),
+    buttonColor: Color = .purple,
+    buttonTitle: String = "Get Started",
+    onComplete: @escaping () -> Void = {}
+)
+```
+
+#### Result Builder Initializer
 ```swift
 init(
     backgroundColor: Color = .white,
-    details: [SVContent],
     titleFont: Font = .system(size: 24, weight: .bold),
     descriptionFont: Font = .system(size: 16),
-    onComplete: @escaping () -> Void
+    buttonColor: Color = .purple,
+    buttonTitle: String = "Get Started",
+    onComplete: @escaping () -> Void = {},
+    @SVContentBuilder content: () -> [SVContent]
 )
 ```
 
@@ -486,6 +555,18 @@ init(
 - `title: String` - The title text
 - `description: String` - The description text
 - `image: UIImage?` - Optional image
+
+### SVContentBuilder (Result Builder)
+
+A SwiftUI-style result builder for declaratively constructing content arrays:
+
+```swift
+SVSwiperView {
+    SVContent(title: "Screen 1", description: "Description", image: nil)
+    SVContent(title: "Screen 2", description: "Description", image: nil)
+    // ... more content
+}
+```
 
 ## Example Project
 
@@ -522,7 +603,7 @@ The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
