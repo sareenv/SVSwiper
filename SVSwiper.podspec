@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
   s.name             = 'SVSwiper'
-  s.version          = '2.0.1'
+  s.version          = '2.1.1'
   s.summary          = 'SVSwiper framework allows developers to create onboarding screens within a fewer lines of code'
-  s.swift_version    = '4.2'
+  s.swift_version    = '5.3'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Vinayak Sareen' => 'contact@sareenv.com' }
   s.source           = { :git => 'https://github.com/sareenv/SVSwiper.git', :tag => s.version.to_s }
   s.social_media_url = 'https://www.sareenv.com'
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '14.0'
   s.source_files = 'SVSwiper/Classes/**/*.swift'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
