@@ -7,6 +7,8 @@ SVSwiper library uses core UIKit components and provides custom onBoarding scree
 
 ## Installation
 
+### CocoaPods
+
 SVSwiper is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
@@ -14,6 +16,34 @@ it, simply add the following line to your Podfile:
 pod 'SVSwiper'
 ```
 
+### Swift Package Manager
+
+SVSwiper is also available through [Swift Package Manager](https://swift.org/package-manager/).
+
+To add SVSwiper as a dependency to your Xcode project, select File > Swift Packages > Add Package Dependency and enter the repository URL:
+
+```
+https://github.com/sareenv/SVSwiper.git
+```
+
+Alternatively, you can add it to your `Package.swift` file:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/sareenv/SVSwiper.git", from: "2.0.1")
+]
+```
+
+Then add `SVSwiper` to your target dependencies:
+
+```swift
+targets: [
+    .target(
+        name: "YourTarget",
+        dependencies: ["SVSwiper"]
+    )
+]
+```
 
 ## Example
 
@@ -61,7 +91,7 @@ The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+IMPLED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
