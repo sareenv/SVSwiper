@@ -9,23 +9,23 @@ on:
 
 jobs:
   test:
-    name: Test on iOS ${{ matrix.ios-version }}
+    name: Test on iOS ${{ matrix.destination }}
     runs-on: macos-14
     strategy:
       matrix:
-        ios-version: ['17.2', '16.4']
-        include:
-          - ios-version: '17.2'
-            xcode-version: '15.2'
-          - ios-version: '16.4'
-            xcode-version: '14.3.1'
+        destination:
+          - 'platform=iOS Simulator,name=iPhone 15 Pro,OS=17.2'
+          - 'platform=iOS Simulator,name=iPhone 14,OS=16.4'
     
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
     
-    - name: Select Xcode version
-      run: sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode-version }}.app/Contents/Developer
+    - name: List available Xcode versions
+      run: ls /Applications/ | grep Xcode
+    
+    - name: List available Xcode versions
+      run: ls /Applications/ | grep Xcode
     
     - name: Show Xcode version
       run: xcodebuild -version
@@ -34,7 +34,7 @@ jobs:
       run: |
         xcodebuild clean build-for-testing \
           -scheme SVSwiper \
-          -destination 'platform=iOS Simulator,name=iPhone 15,OS=${{ matrix.ios-version }}' \
+          -destination '${{ matrix.destination }}' \
           CODE_SIGN_IDENTITY="" \
           CODE_SIGNING_REQUIRED=NO
     
@@ -42,7 +42,7 @@ jobs:
       run: |
         xcodebuild test-without-building \
           -scheme SVSwiper \
-          -destination 'platform=iOS Simulator,name=iPhone 15,OS=${{ matrix.ios-version }}' \
+          -destination '${{ matrix.destination }}' \
           CODE_SIGN_IDENTITY="" \
           CODE_SIGNING_REQUIRED=NO
 
@@ -54,8 +54,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
     
-    - name: Select Xcode
-      run: sudo xcode-select -s /Applications/Xcode_15.2.app/Contents/Developer
+    - name: Show Xcode version
+      run: xcodebuild -version
     
     - name: Build Swift Package
       run: swift build
