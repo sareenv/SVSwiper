@@ -180,9 +180,6 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
             return
         }
         
-        // Remove current controller
-        window.rootViewController?.removeFromParent()
-        
         // Set new root based on navigation preference
         if isNavigationSupported == true {
             window.rootViewController = UINavigationController(rootViewController: parentController)
@@ -259,7 +256,7 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
         pageControl.currentPage = currentPage
         
         // Notify delegate of page change
-        coordinatorDelegate?.swiper?(self, didScrollToPage: currentPage)
+        coordinatorDelegate?.swiper(self, didScrollToPage: currentPage)
         
         // Show button on last page
         let isLastPage = currentPage == details.count - 1
