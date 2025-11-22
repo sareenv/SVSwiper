@@ -1,24 +1,50 @@
 //
 //  SVSliderCell.swift
-//  Pods-SVSwiper_Example
+//  SVSwiper
 //
 //  Created by DataBunker on 10/01/2021.
 //
 
 import UIKit
 
+/// A collection view cell that displays onboarding content with an image, title, and description
 public class SVSliderCell: UICollectionViewCell {
-   
-    public var contentTitle: String? {didSet {contentTitleLabel.text = contentTitle ?? "title"} }
-    public var contentDescription: String? {didSet {contentDescriptionLabel.text = contentDescription ?? "description"} }
     
-    public var sliderImage: UIImage? {
+    // MARK: - Constants
+    
+    private enum Constants {
+        static let imageHeight: CGFloat = 200
+        static let stackSpacing: CGFloat = 10
+        static let horizontalPadding: CGFloat = 20
+    }
+    
+    // MARK: - Public Properties
+    
+    /// The title text displayed on the cell
+    public var contentTitle: String? {
         didSet {
-            setupContentImage(contentImage: sliderImage)
+            contentTitleLabel.text = contentTitle ?? "title"
         }
     }
     
-    lazy var contentImageView: UIImageView = {
+    /// The description text displayed below the title
+    public var contentDescription: String? {
+        didSet {
+            contentDescriptionLabel.text = contentDescription ?? "description"
+        }
+    }
+    
+    /// The image displayed above the title and description
+    public var sliderImage: UIImage? {
+        didSet {
+            contentImageView.image = sliderImage
+            contentImageView.isHidden = sliderImage == nil
+        }
+    }
+    
+    // MARK: - Private UI Components
+    
+    private lazy var contentImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
@@ -26,49 +52,61 @@ public class SVSliderCell: UICollectionViewCell {
         return imageView
     }()
     
-    lazy var contentTitleLabel: UILabel = {
+    private lazy var contentTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 21)
         label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
     
-    lazy var contentDescriptionLabel: UILabel = {
+    private lazy var contentDescriptionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18)
         label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
     
-    lazy var vStackView: UIStackView = {
+    private lazy var vStackView: UIStackView = {
         let sv = UIStackView()
         sv.translatesAutoresizingMaskIntoConstraints = false
-        sv.spacing = 10
+        sv.spacing = Constants.stackSpacing
         sv.distribution = .fill
         sv.alignment = .center
         sv.axis = .vertical
         return sv
     }()
     
+    // MARK: - Initialization
     
-    private func setupContentImageViewConstraints() {
-        let estimatedHeight = CGFloat(200)
-        contentImageView.heightAnchor.constraint(equalToConstant: estimatedHeight).isActive = true
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupDetailsLabels()
+        setupContentImageViewConstraints()
     }
     
-    private func setupContentImage(contentImage: UIImage?) {
-        setupContentImageViewConstraints()
-        if let contentImage = contentImage {
-            self.contentImageView.image = contentImage
-            return
-        }
-        vStackView.removeArrangedSubview(contentImageView)
+    required init?(coder: NSCoder) {
+        // Return nil instead of fatalError to support Storyboard/XIB if needed
+        return nil
+    }
+    
+    // MARK: - Setup Methods
+    
+    private func setupContentImageViewConstraints() {
+        contentImageView.heightAnchor.constraint(equalToConstant: Constants.imageHeight).isActive = true
     }
     
     private func setupVStackConstraints() {
-        vStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        vStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
-        vStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
+        vStackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        vStackView.leadingAnchor.constraint(
+            equalTo: leadingAnchor,
+            constant: Constants.horizontalPadding
+        ).isActive = true
+        vStackView.trailingAnchor.constraint(
+            equalTo: trailingAnchor,
+            constant: -Constants.horizontalPadding
+        ).isActive = true
     }
     
     private func setupDetailsLabels() {
@@ -78,14 +116,4 @@ public class SVSliderCell: UICollectionViewCell {
         addSubview(vStackView)
         setupVStackConstraints()
     }
-    
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupDetailsLabels()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
 }

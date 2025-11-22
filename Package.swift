@@ -22,6 +22,11 @@ let package = Package(
             dependencies: [],
             path: "SVSwiper/Classes",
             exclude: [".gitkeep"]
+        ),
+        .testTarget(
+            name: "SVSwiperTests",
+            dependencies: ["SVSwiper"],
+            path: "Tests/SVSwiperTests"
         )
     ],
     swiftLanguageVersions: [.v5]
