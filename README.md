@@ -5,7 +5,7 @@ SVSwiper library uses core UIKit components and provides custom onBoarding scree
 
 [![Version](https://img.shields.io/cocoapods/v/SVSwiper.svg?style=flat)](https://cocoapods.org/pods/SVSwiper)
 [![Swift Version](https://img.shields.io/badge/Swift-5.3+-orange.svg)](https://swift.org)
-[![Platform](https://img.shields.io/badge/platform-iOS%2011.0+-blue.svg)](https://developer.apple.com/ios/)
+[![Platform](https://img.shields.io/badge/platform-iOS%2014.0+-blue.svg)](https://developer.apple.com/ios/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Privacy](https://img.shields.io/badge/privacy-manifest-blue.svg)](https://developer.apple.com/documentation/bundleresources/privacy-manifest-files)
 
@@ -17,13 +17,12 @@ SVSwiper library uses core UIKit components and provides custom onBoarding scree
 🔒 **Type Safe** - Fully written in Swift with value types  
 🧪 **Tested** - Comprehensive unit test coverage  
 🎯 **Delegate Pattern** - Modern coordinator delegate for better control  
-🦋 **SwiftUI Support** - Native SwiftUI views for iOS 13+ with result builders  
+🦋 **SwiftUI Support** - Native SwiftUI views for iOS 14+ with result builders  
 🔐 **Privacy Manifest** - Includes PrivacyInfo.xcprivacy for App Store compliance  
 
 ## Requirements
 
-- iOS 11.0+ (UIKit)
-- iOS 13.0+ (SwiftUI)
+- iOS 14.0+
 - Swift 5.3+
 - Xcode 12.0+
 
@@ -68,7 +67,7 @@ pod 'SVSwiper'
 
 ## Usage
 
-### SwiftUI (iOS 13+)
+### SwiftUI
 
 For modern SwiftUI apps, use the native `SVSwiperView` with **ultra-simple syntax**:
 
@@ -284,7 +283,7 @@ class AppCoordinator: SVSwiperCoordinatorDelegate {
 ### In SceneDelegate or AppDelegate
 
 ```swift
-// In SceneDelegate (iOS 13+)
+// In SceneDelegate
 func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     let window = UIWindow(windowScene: windowScene)
@@ -292,17 +291,6 @@ func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options conn
     
     let coordinator = AppCoordinator(window: window)
     coordinator.start()
-}
-
-// Or in AppDelegate (iOS 11-12)
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    let window = UIWindow(frame: UIScreen.main.bounds)
-    self.window = window
-    
-    let coordinator = AppCoordinator(window: window)
-    coordinator.start()
-    
-    return true
 }
 ```
 
