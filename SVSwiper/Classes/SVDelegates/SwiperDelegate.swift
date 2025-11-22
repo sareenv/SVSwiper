@@ -26,7 +26,7 @@ public protocol SVSwiperDelegate: AnyObject {
 
 /// Modern coordinator delegate for controlling onboarding flow presentation and dismissal
 /// - Note: Implement this delegate for full control over navigation flow
-@objc public protocol SVSwiperCoordinatorDelegate: AnyObject {
+public protocol SVSwiperCoordinatorDelegate: AnyObject {
     /// Called when the user completes the onboarding flow by tapping "Get Started"
     /// - Parameter controller: The swiper controller that completed
     func swiperDidComplete(_ controller: SVSwiperController)
@@ -40,5 +40,14 @@ public protocol SVSwiperDelegate: AnyObject {
     /// - Parameters:
     ///   - controller: The swiper controller
     ///   - page: The new page index (zero-based)
-    @objc optional func swiper(_ controller: SVSwiperController, didScrollToPage page: Int)
+    func swiper(_ controller: SVSwiperController, didScrollToPage page: Int)
+}
+
+// MARK: - Optional Methods
+
+public extension SVSwiperCoordinatorDelegate {
+    /// Default implementation for optional scroll callback
+    func swiper(_ controller: SVSwiperController, didScrollToPage page: Int) {
+        // Optional - implement in conforming types if needed
+    }
 }
