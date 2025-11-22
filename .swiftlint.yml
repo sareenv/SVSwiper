@@ -1,0 +1,54 @@
+# SwiftLint Configuration for SVSwiper
+
+disabled_rules:
+  - trailing_whitespace
+  - todo
+  - line_length
+
+opt_in_rules:
+  - empty_count
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - explicit_init
+
+excluded:
+  - Pods
+  - .build
+  - Package.swift
+  - Tests
+  - Example
+
+identifier_name:
+  min_length:
+    warning: 2
+    error: 1
+  excluded:
+    - id
+    - URL
+    - x
+    - y
+
+type_name:
+  min_length:
+    warning: 3
+  max_length:
+    warning: 50
+
+file_length:
+  warning: 500
+  error: 1000
+
+function_body_length:
+  warning: 50
+  error: 100
+
+type_body_length:
+  warning: 300
+  error: 500
+
+cyclomatic_complexity:
+  warning: 10
+  error: 20
+
+force_cast: error
+force_try: error

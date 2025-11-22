@@ -1,0 +1,94 @@
+name: CI
+
+on:
+  push:
+    branches: [ master, main, feature/* ]
+  pull_request:
+    branches: [ master, main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Test on iOS ${{ matrix.ios-version }}
+    runs-on: macos-14
+    strategy:
+      matrix:
+        ios-version: ['17.2', '16.4']
+        include:
+          - ios-version: '17.2'
+            xcode-version: '15.2'
+          - ios-version: '16.4'
+            xcode-version: '14.3.1'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Select Xcode version
+      run: sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode-version }}.app/Contents/Developer
+    
+    - name: Show Xcode version
+      run: xcodebuild -version
+    
+    - name: Build for testing
+      run: |
+        xcodebuild clean build-for-testing \
+          -scheme SVSwiper \
+          -destination 'platform=iOS Simulator,name=iPhone 15,OS=${{ matrix.ios-version }}' \
+          CODE_SIGN_IDENTITY="" \
+          CODE_SIGNING_REQUIRED=NO
+    
+    - name: Run tests
+      run: |
+        xcodebuild test-without-building \
+          -scheme SVSwiper \
+          -destination 'platform=iOS Simulator,name=iPhone 15,OS=${{ matrix.ios-version }}' \
+          CODE_SIGN_IDENTITY="" \
+          CODE_SIGNING_REQUIRED=NO
+
+  spm-build:
+    name: Swift Package Manager Build
+    runs-on: macos-14
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Select Xcode
+      run: sudo xcode-select -s /Applications/Xcode_15.2.app/Contents/Developer
+    
+    - name: Build Swift Package
+      run: swift build
+    
+    - name: Run Swift Package Tests
+      run: swift test
+
+  swiftlint:
+    name: SwiftLint
+    runs-on: macos-14
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Install SwiftLint
+      run: brew install swiftlint
+    
+    - name: Run SwiftLint
+      run: swiftlint lint --strict
+      continue-on-error: true
+
+  cocoapods:
+    name: CocoaPods Validation
+    runs-on: macos-14
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Install CocoaPods
+      run: gem install cocoapods
+    
+    - name: Validate Podspec
+      run: pod lib lint --allow-warnings
+      continue-on-error: true
