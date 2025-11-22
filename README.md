@@ -7,19 +7,23 @@ SVSwiper library uses core UIKit components and provides custom onBoarding scree
 [![Swift Version](https://img.shields.io/badge/Swift-5.3+-orange.svg)](https://swift.org)
 [![Platform](https://img.shields.io/badge/platform-iOS%2011.0+-blue.svg)](https://developer.apple.com/ios/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Privacy](https://img.shields.io/badge/privacy-manifest-blue.svg)](https://developer.apple.com/documentation/bundleresources/privacy-manifest-files)
 
 ## Features
 
-✨ **Easy Integration** - Simple API with just a few lines of code
-🎨 **Customizable** - Customize colors, fonts, and content
-📱 **Modern Design** - Beautiful horizontal scrolling onboarding screens
-🔒 **Type Safe** - Fully written in Swift with value types
-🧪 **Tested** - Comprehensive unit test coverage
-🎯 **Delegate Pattern** - Modern coordinator delegate for better control
+✨ **Easy Integration** - Simple API with just a few lines of code  
+🎨 **Customizable** - Customize colors, fonts, and content  
+📱 **Modern Design** - Beautiful horizontal scrolling onboarding screens  
+🔒 **Type Safe** - Fully written in Swift with value types  
+🧪 **Tested** - Comprehensive unit test coverage  
+🎯 **Delegate Pattern** - Modern coordinator delegate for better control  
+🦋 **SwiftUI Support** - Native SwiftUI views for iOS 13+  
+🔐 **Privacy Manifest** - Includes PrivacyInfo.xcprivacy for App Store compliance  
 
 ## Requirements
 
-- iOS 11.0+
+- iOS 11.0+ (UIKit)
+- iOS 13.0+ (SwiftUI)
 - Swift 5.3+
 - Xcode 12.0+
 
@@ -64,7 +68,104 @@ pod 'SVSwiper'
 
 ## Usage
 
-### Basic Setup (Modern Approach - Recommended)
+### SwiftUI (iOS 13+)
+
+For modern SwiftUI apps, use the native `SVSwiperView`:
+
+```swift
+import SwiftUI
+import SVSwiper
+
+struct ContentView: View {
+    @State private var showOnboarding = !UserDefaults.standard.bool(forKey: "isOpenedBefore")
+    
+    var body: some View {
+        if showOnboarding {
+            SVSwiperView(
+                backgroundColor: .white,
+                details: [
+                    SVContent(
+                        title: "Welcome",
+                        description: "Get started with our amazing app",
+                        image: UIImage(named: "onboarding1")
+                    ),
+                    SVContent(
+                        title: "Discover",
+                        description: "Explore all the features",
+                        image: UIImage(named: "onboarding2")
+                    ),
+                    SVContent(
+                        title: "Get Started",
+                        description: "You're all set!",
+                        image: UIImage(named: "onboarding3")
+                    )
+                ],
+                titleFont: .system(size: 24, weight: .bold),
+                descriptionFont: .system(size: 16)
+            ) {
+                showOnboarding = false
+            }
+            .transition(.opacity)
+        } else {
+            MainAppView()
+        }
+    }
+}
+```
+
+#### Advanced SwiftUI Usage with Custom Styling
+
+```swift
+struct ContentView: View {
+    @State private var showOnboarding = true
+    
+    var body: some View {
+        if showOnboarding {
+            SVSwiperView(
+                backgroundColor: Color(uiColor: .systemBackground),
+                details: onboardingContent,
+                titleFont: .custom("YourFont-Bold", size: 28),
+                descriptionFont: .custom("YourFont-Regular", size: 17)
+            ) {
+                withAnimation {
+                    showOnboarding = false
+                }
+            }
+            .transition(.move(edge: .leading))
+        } else {
+            TabView {
+                HomeView()
+                    .tabItem {
+                        Label("Home", systemImage: "house")
+                    }
+                // Other tabs...
+            }
+        }
+    }
+    
+    private var onboardingContent: [SVContent] {
+        [
+            SVContent(
+                title: "Maximise Profits",
+                description: "Gain with our internal tools, we are here to support your company at every stage",
+                image: UIImage(named: "onboarding1")
+            ),
+            SVContent(
+                title: "Invest in Stocks",
+                description: "We provide great insights, on which stock to buy and sell at any moment of time",
+                image: UIImage(named: "onboarding2")
+            ),
+            SVContent(
+                title: "Develop Connections",
+                description: "Connect with community of experts in the field of stock market",
+                image: UIImage(named: "onboarding3")
+            )
+        ]
+    }
+}
+```
+
+### UIKit - Modern Coordinator Pattern (Recommended)
 
 The modern approach uses a coordinator delegate pattern for better control over navigation:
 
@@ -167,7 +268,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-### Legacy Approach (Deprecated)
+### UIKit - Legacy Approach (Deprecated)
 
 The library still supports the legacy approach for backward compatibility:
 
@@ -200,6 +301,24 @@ class ViewController: UIViewController {
 }
 ```
 
+## Privacy Manifest
+
+SVSwiper includes a `PrivacyInfo.xcprivacy` file that declares:
+
+- **No Tracking**: The library does not track users
+- **No Data Collection**: No personal data is collected
+- **UserDefaults API Usage**: Documents the use of UserDefaults for storing onboarding completion status (Reason: CA92.1 - Storing user preferences)
+
+This ensures compliance with Apple's App Privacy requirements for iOS 17+ and App Store submissions.
+
+### What's Declared
+
+```xml
+NSPrivacyAccessedAPITypes:
+  - NSPrivacyAccessedAPICategoryUserDefaults
+    Reasons: CA92.1 (Accessing user defaults to read/write onboarding completion status)
+```
+
 ## Customization
 
 ### SVContent
@@ -214,7 +333,7 @@ let content = SVContent(
 )
 ```
 
-### SVSwiperController
+### SVSwiperController (UIKit)
 
 Customize the appearance:
 
@@ -227,23 +346,46 @@ let controller = SVSwiperController(
 )
 ```
 
+### SVSwiperView (SwiftUI)
+
+Customize the SwiftUI view:
+
+```swift
+SVSwiperView(
+    backgroundColor: Color.white,         // Background color
+    details: contentArray,                // Array of SVContent
+    titleFont: .system(size: 24, weight: .bold),      // Title font
+    descriptionFont: .system(size: 16)    // Description font
+) {
+    // Completion handler
+}
+```
+
 ## Testing
 
 To reset the onboarding status (useful for testing):
 
 ```swift
+// UIKit
 let controller = SVSwiperController(backgroundColor: .white, details: data)
 controller.resetOnboardingStatus()
+
+// SwiftUI
+UserDefaults.standard.removeObject(forKey: "isOpenedBefore")
 ```
 
 To check if onboarding should be shown:
 
 ```swift
+// UIKit
 if controller.shouldShowOnboarding() {
     // Show onboarding
 } else {
     // Show main app
 }
+
+// SwiftUI
+@State private var showOnboarding = !UserDefaults.standard.bool(forKey: "isOpenedBefore")
 ```
 
 ## Migration Guide (v2.0 → v2.1)
@@ -259,6 +401,12 @@ if controller.shouldShowOnboarding() {
    - `svDescription` → `description`
    - `svImage` → `image`
    - Old property names still work but are deprecated
+
+### New Features
+
+1. **SwiftUI Support** - Native SwiftUI views for iOS 13+
+2. **Privacy Manifest** - Includes PrivacyInfo.xcprivacy for App Store compliance
+3. **Modern Coordinator Pattern** - Better separation of concerns
 
 ### Recommended Updates
 
@@ -285,9 +433,34 @@ let content = SVContent(title: "Title", description: "Desc")
 print(content.title)
 ```
 
+3. **Consider SwiftUI** for new projects:
+
+```swift
+// New SwiftUI approach
+SVSwiperView(
+    backgroundColor: .white,
+    details: data
+) {
+    // Handle completion
+}
+```
+
 ## API Documentation
 
-### SVSwiperController
+### SVSwiperView (SwiftUI)
+
+#### Initializer
+```swift
+init(
+    backgroundColor: Color = .white,
+    details: [SVContent],
+    titleFont: Font = .system(size: 24, weight: .bold),
+    descriptionFont: Font = .system(size: 16),
+    onComplete: @escaping () -> Void
+)
+```
+
+### SVSwiperController (UIKit)
 
 #### Properties
 - `coordinatorDelegate: SVSwiperCoordinatorDelegate?` - Delegate for lifecycle events
