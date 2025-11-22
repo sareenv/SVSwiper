@@ -9,13 +9,14 @@ import Foundation
 import UIKit
 
 /// Delegate protocol for coordinating SVSwiper lifecycle events
-/// - Important: Use this delegate instead of relying on automatic window manipulation for better control
-@objc public protocol SVSwiperDelegate {
+/// - Important: This protocol is deprecated. Use SVSwiperCoordinatorDelegate instead
+@available(*, deprecated, message: "Use SVSwiperCoordinatorDelegate for modern delegate methods")
+public protocol SVSwiperDelegate: AnyObject {
     /// Called when content should be generated randomly (legacy, unused)
-    @objc optional func generateRadomContent() -> [SVContent]
+    func generateRadomContent() -> [Any]
     
     /// Called with the size of the slider (legacy, unused)
-    @objc optional func sizeForSlider(slideSize: CGSize)
+    func sizeForSlider(slideSize: CGSize)
     
     /// Called to determine if paging is enabled for the slider (legacy, unused)
     func isPagerEnabledForSlider(isPagerEnabled: Bool)
@@ -25,7 +26,7 @@ import UIKit
 
 /// Modern coordinator delegate for controlling onboarding flow presentation and dismissal
 /// - Note: Implement this delegate for full control over navigation flow
-public protocol SVSwiperCoordinatorDelegate: AnyObject {
+@objc public protocol SVSwiperCoordinatorDelegate: AnyObject {
     /// Called when the user completes the onboarding flow by tapping "Get Started"
     /// - Parameter controller: The swiper controller that completed
     func swiperDidComplete(_ controller: SVSwiperController)
