@@ -7,19 +7,23 @@ SVSwiper library uses core UIKit components and provides custom onBoarding scree
 [![Swift Version](https://img.shields.io/badge/Swift-5.3+-orange.svg)](https://swift.org)
 [![Platform](https://img.shields.io/badge/platform-iOS%2011.0+-blue.svg)](https://developer.apple.com/ios/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Privacy](https://img.shields.io/badge/privacy-manifest-blue.svg)](https://developer.apple.com/documentation/bundleresources/privacy-manifest-files)
 
 ## Features
 
-✨ **Easy Integration** - Simple API with just a few lines of code
-🎨 **Customizable** - Customize colors, fonts, and content
-📱 **Modern Design** - Beautiful horizontal scrolling onboarding screens
-🔒 **Type Safe** - Fully written in Swift with value types
-🧪 **Tested** - Comprehensive unit test coverage
-🎯 **Delegate Pattern** - Modern coordinator delegate for better control
+✨ **Easy Integration** - Simple API with just a few lines of code  
+🎨 **Customizable** - Customize colors, fonts, and content  
+📱 **Modern Design** - Beautiful horizontal scrolling onboarding screens  
+🔒 **Type Safe** - Fully written in Swift with value types  
+🧪 **Tested** - Comprehensive unit test coverage  
+🎯 **Delegate Pattern** - Modern coordinator delegate for better control  
+🦋 **SwiftUI Support** - Native SwiftUI views for iOS 13+ with result builders  
+🔐 **Privacy Manifest** - Includes PrivacyInfo.xcprivacy for App Store compliance  
 
 ## Requirements
 
-- iOS 11.0+
+- iOS 11.0+ (UIKit)
+- iOS 13.0+ (SwiftUI)
 - Swift 5.3+
 - Xcode 12.0+
 
@@ -64,7 +68,142 @@ pod 'SVSwiper'
 
 ## Usage
 
-### Basic Setup (Modern Approach - Recommended)
+### SwiftUI (iOS 13+)
+
+For modern SwiftUI apps, use the native `SVSwiperView` with **ultra-simple syntax**:
+
+#### Minimal Setup (Just Pass the Array!)
+
+```swift
+import SwiftUI
+import SVSwiper
+
+struct ContentView: View {
+    @State private var showOnboarding = !UserDefaults.standard.bool(forKey: "isOpenedBefore")
+    
+    var body: some View {
+        if showOnboarding {
+            // Just pass your content array! ✨
+            SVSwiperView([
+                SVContent(title: "Welcome", description: "Get started", image: UIImage(named: "onboarding1")),
+                SVContent(title: "Discover", description: "Explore features", image: UIImage(named: "onboarding2")),
+                SVContent(title: "Get Started", description: "You're all set!", image: UIImage(named: "onboarding3"))
+            ]) {
+                showOnboarding = false
+            }
+        } else {
+            MainAppView()
+        }
+    }
+}
+```
+
+#### Result Builder Syntax (SwiftUI-Native DSL)
+
+For a more declarative approach, use the result builder:
+
+```swift
+struct ContentView: View {
+    @State private var showOnboarding = true
+    
+    var body: some View {
+        if showOnboarding {
+            SVSwiperView {
+                SVContent(
+                    title: "Welcome",
+                    description: "Get started with our amazing app",
+                    image: UIImage(named: "onboarding1")
+                )
+                SVContent(
+                    title: "Discover",
+                    description: "Explore all the features",
+                    image: UIImage(named: "onboarding2")
+                )
+                SVContent(
+                    title: "Get Started",
+                    description: "You're all set!",
+                    image: UIImage(named: "onboarding3")
+                )
+            } onComplete: {
+                withAnimation {
+                    showOnboarding = false
+                }
+            }
+        } else {
+            MainAppView()
+        }
+    }
+}
+```
+
+#### Advanced Customization
+
+```swift
+struct ContentView: View {
+    @State private var showOnboarding = true
+    
+    let contents = [
+        SVContent(title: "Maximise Profits", description: "Gain with our internal tools", image: UIImage(named: "onboarding1")),
+        SVContent(title: "Invest in Stocks", description: "We provide great insights", image: UIImage(named: "onboarding2")),
+        SVContent(title: "Develop Connections", description: "Connect with experts", image: UIImage(named: "onboarding3"))
+    ]
+    
+    var body: some View {
+        if showOnboarding {
+            SVSwiperView(
+                contents,
+                backgroundColor: Color(uiColor: .systemBackground),
+                titleFont: .custom("YourFont-Bold", size: 28),
+                descriptionFont: .custom("YourFont-Regular", size: 17),
+                buttonColor: .blue,
+                buttonTitle: "Let's Go!"
+            ) {
+                withAnimation {
+                    showOnboarding = false
+                }
+            }
+            .transition(.move(edge: .leading))
+        } else {
+            TabView {
+                HomeView()
+                    .tabItem { Label("Home", systemImage: "house") }
+            }
+        }
+    }
+}
+```
+
+#### Multiple Initialization Options
+
+```swift
+// 1. Simplest - Just the array
+SVSwiperView(contents) { }
+
+// 2. With customization
+SVSwiperView(contents, backgroundColor: .blue, buttonColor: .green) { }
+
+// 3. Result builder (DSL style)
+SVSwiperView {
+    SVContent(title: "Screen 1", description: "Description", image: nil)
+    SVContent(title: "Screen 2", description: "Description", image: nil)
+} onComplete: { }
+
+// 4. Full customization with result builder
+SVSwiperView(
+    backgroundColor: .white,
+    titleFont: .largeTitle,
+    descriptionFont: .body,
+    buttonColor: .purple,
+    buttonTitle: "Start Now"
+) {
+    SVContent(title: "Welcome", description: "Let's begin", image: nil)
+    SVContent(title: "Features", description: "Discover more", image: nil)
+} onComplete: {
+    print("Completed!")
+}
+```
+
+### UIKit - Modern Coordinator Pattern (Recommended)
 
 The modern approach uses a coordinator delegate pattern for better control over navigation:
 
@@ -167,7 +306,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-### Legacy Approach (Deprecated)
+### UIKit - Legacy Approach (Deprecated)
 
 The library still supports the legacy approach for backward compatibility:
 
@@ -200,6 +339,24 @@ class ViewController: UIViewController {
 }
 ```
 
+## Privacy Manifest
+
+SVSwiper includes a `PrivacyInfo.xcprivacy` file that declares:
+
+- **No Tracking**: The library does not track users
+- **No Data Collection**: No personal data is collected
+- **UserDefaults API Usage**: Documents the use of UserDefaults for storing onboarding completion status (Reason: CA92.1 - Storing user preferences)
+
+This ensures compliance with Apple's App Privacy requirements for iOS 17+ and App Store submissions.
+
+### What's Declared
+
+```xml
+NSPrivacyAccessedAPITypes:
+  - NSPrivacyAccessedAPICategoryUserDefaults
+    Reasons: CA92.1 (Accessing user defaults to read/write onboarding completion status)
+```
+
 ## Customization
 
 ### SVContent
@@ -214,7 +371,7 @@ let content = SVContent(
 )
 ```
 
-### SVSwiperController
+### SVSwiperController (UIKit)
 
 Customize the appearance:
 
@@ -227,23 +384,60 @@ let controller = SVSwiperController(
 )
 ```
 
+### SVSwiperView (SwiftUI)
+
+Customize the SwiftUI view with multiple initialization options:
+
+```swift
+// Simple - just pass the array
+SVSwiperView(contentArray) { }
+
+// With customization
+SVSwiperView(
+    contentArray,
+    backgroundColor: .white,
+    titleFont: .system(size: 24, weight: .bold),
+    descriptionFont: .system(size: 16),
+    buttonColor: .purple,
+    buttonTitle: "Get Started"
+) {
+    // Completion handler
+}
+
+// Result builder syntax
+SVSwiperView {
+    SVContent(title: "Screen 1", description: "Text", image: nil)
+    SVContent(title: "Screen 2", description: "Text", image: nil)
+} onComplete: {
+    // Completion handler
+}
+```
+
 ## Testing
 
 To reset the onboarding status (useful for testing):
 
 ```swift
+// UIKit
 let controller = SVSwiperController(backgroundColor: .white, details: data)
 controller.resetOnboardingStatus()
+
+// SwiftUI
+UserDefaults.standard.removeObject(forKey: "isOpenedBefore")
 ```
 
 To check if onboarding should be shown:
 
 ```swift
+// UIKit
 if controller.shouldShowOnboarding() {
     // Show onboarding
 } else {
     // Show main app
 }
+
+// SwiftUI
+@State private var showOnboarding = !UserDefaults.standard.bool(forKey: "isOpenedBefore")
 ```
 
 ## Migration Guide (v2.0 → v2.1)
@@ -259,6 +453,13 @@ if controller.shouldShowOnboarding() {
    - `svDescription` → `description`
    - `svImage` → `image`
    - Old property names still work but are deprecated
+
+### New Features
+
+1. **SwiftUI Support** - Native SwiftUI views with result builders for iOS 13+
+2. **Privacy Manifest** - Includes PrivacyInfo.xcprivacy for App Store compliance
+3. **Modern Coordinator Pattern** - Better separation of concerns
+4. **Result Builder API** - SwiftUI-native DSL for declaring content
 
 ### Recommended Updates
 
@@ -285,9 +486,50 @@ let content = SVContent(title: "Title", description: "Desc")
 print(content.title)
 ```
 
+3. **Consider SwiftUI** for new projects:
+
+```swift
+// New SwiftUI approach (ultra-simple!)
+SVSwiperView(contents) { }
+
+// Or with result builder
+SVSwiperView {
+    SVContent(title: "Welcome", description: "Let's begin", image: nil)
+    SVContent(title: "Features", description: "Discover", image: nil)
+} onComplete: { }
+```
+
 ## API Documentation
 
-### SVSwiperController
+### SVSwiperView (SwiftUI)
+
+#### Simple Array Initializer
+```swift
+init(
+    _ details: [SVContent],
+    backgroundColor: Color = .white,
+    titleFont: Font = .system(size: 24, weight: .bold),
+    descriptionFont: Font = .system(size: 16),
+    buttonColor: Color = .purple,
+    buttonTitle: String = "Get Started",
+    onComplete: @escaping () -> Void = {}
+)
+```
+
+#### Result Builder Initializer
+```swift
+init(
+    backgroundColor: Color = .white,
+    titleFont: Font = .system(size: 24, weight: .bold),
+    descriptionFont: Font = .system(size: 16),
+    buttonColor: Color = .purple,
+    buttonTitle: String = "Get Started",
+    onComplete: @escaping () -> Void = {},
+    @SVContentBuilder content: () -> [SVContent]
+)
+```
+
+### SVSwiperController (UIKit)
 
 #### Properties
 - `coordinatorDelegate: SVSwiperCoordinatorDelegate?` - Delegate for lifecycle events
@@ -313,6 +555,18 @@ print(content.title)
 - `title: String` - The title text
 - `description: String` - The description text
 - `image: UIImage?` - Optional image
+
+### SVContentBuilder (Result Builder)
+
+A SwiftUI-style result builder for declaratively constructing content arrays:
+
+```swift
+SVSwiperView {
+    SVContent(title: "Screen 1", description: "Description", image: nil)
+    SVContent(title: "Screen 2", description: "Description", image: nil)
+    // ... more content
+}
+```
 
 ## Example Project
 
@@ -349,7 +603,7 @@ The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,

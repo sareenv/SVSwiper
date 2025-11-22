@@ -20,8 +20,14 @@ let package = Package(
         .target(
             name: "SVSwiper",
             dependencies: [],
-            path: "SVSwiper/Classes",
-            exclude: [".gitkeep"]
+            path: "SVSwiper",
+            exclude: [
+                "Classes/.gitkeep",
+                "Assets"
+            ],
+            resources: [
+                .process("PrivacyInfo.xcprivacy")
+            ]
         ),
         .testTarget(
             name: "SVSwiperTests",
