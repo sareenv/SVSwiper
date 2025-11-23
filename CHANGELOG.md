@@ -7,6 +7,72 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.2] - 2025-11-23
+
+### 🎨 Enhancements
+
+#### Comprehensive UI Customization
+- **Added** Full button customization options:
+  - `buttonBackgroundColor: UIColor` - Customize button background color
+  - `buttonTextColor: UIColor` - Customize button text color
+  - `buttonFont: UIFont` - Customize button font
+  - `buttonTitle: String` - Customize button title text
+  - `buttonCornerRadius: CGFloat` - Customize button corner radius
+- **Added** Page control customization:
+  - `currentPageIndicatorColor: UIColor` - Customize active page indicator color
+  - `pageIndicatorColor: UIColor` - Customize inactive page indicator colors
+- **Added** Text color customization:
+  - `titleColor: UIColor` - Customize title text color
+  - `descriptionColor: UIColor` - Customize description text color
+
+#### SVSliderCell Enhancements
+- **Added** Public properties for text styling (font and color)
+- **Updated** Labels to respect custom styling passed from controller
+- **Maintained** Backward compatibility with default values
+
+### 🔧 Improvements
+
+- **Enhanced** API design with comprehensive initializer
+- **Preserved** Backward compatibility via convenience initializer
+- **Enabled** Full brand customization for design systems
+- **Improved** Developer experience with more control over UI elements
+
+### 💡 Use Cases
+
+This release enables apps to fully match onboarding to their brand guidelines:
+
+```swift
+let controller = SVSwiperController(
+    backgroundColor: AppColors.backgroundPrimary,
+    details: content,
+    titleFont: Typography.featured,
+    descriptionFont: Typography.contentPrimary,
+    titleColor: AppColors.textPrimary,
+    descriptionColor: AppColors.textSecondary,
+    buttonBackgroundColor: AppColors.accent,
+    buttonTextColor: AppColors.textOnPrimary,
+    buttonFont: Typography.buttonLarge,
+    buttonTitle: "Let's Begin",
+    buttonCornerRadius: 12,
+    currentPageIndicatorColor: AppColors.primary,
+    pageIndicatorColor: AppColors.textTertiary
+)
+```
+
+### 📋 Benefits
+
+1. **Full Brand Control** - Match onboarding to your design system
+2. **Zero Breaking Changes** - Existing code works without modifications
+3. **Better DX** - No need to fork/modify the library
+4. **Consistency** - Single source of truth for all styling
+5. **Professional** - Maintain consistent branding throughout
+
+### 🔗 Related Issues
+
+- Closes #8 - Feature Request: Enhanced UI Customization Options
+
+---
+
 ## [2.1.1] - 2025-11-22
 
 ### � Improvements
@@ -190,6 +256,37 @@ Previous versions focused on basic onboarding functionality with UIKit support.
 
 ## Migration Guides
 
+### Migrating to 2.1.2
+
+#### Using Enhanced Customization
+
+Version 2.1.2 introduces comprehensive UI customization options. You can now fully match the onboarding experience to your brand:
+
+```swift
+// Simple usage (backward compatible)
+let controller = SVSwiperController(
+    backgroundColor: .white,
+    details: data
+)
+
+// Full customization (new in 2.1.2)
+let controller = SVSwiperController(
+    backgroundColor: AppColors.backgroundPrimary,
+    details: data,
+    titleFont: Typography.featured,
+    descriptionFont: Typography.contentPrimary,
+    titleColor: AppColors.textPrimary,
+    descriptionColor: AppColors.textSecondary,
+    buttonBackgroundColor: AppColors.accent,
+    buttonTextColor: AppColors.textOnPrimary,
+    buttonFont: Typography.buttonLarge,
+    buttonTitle: "Let's Begin",
+    buttonCornerRadius: 12,
+    currentPageIndicatorColor: AppColors.primary,
+    pageIndicatorColor: AppColors.textTertiary
+)
+```
+
 ### Migrating to 2.1.0
 
 #### From Legacy Window Manipulation
@@ -240,6 +337,7 @@ SVSwiperView {
 4. **Type Safety**: Improved protocols and delegate patterns
 5. **Memory Management**: Proper weak references and lifecycle management
 6. **Developer Experience**: Better documentation, examples, and error messages
+7. **Full Customization**: Complete control over UI styling (v2.1.2+)
 
 ---
 
