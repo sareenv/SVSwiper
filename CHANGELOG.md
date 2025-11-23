@@ -7,6 +7,55 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.3] - 2025-11-23
+
+### 🐛 Bug Fixes
+
+#### Landscape Orientation Support
+- **Fixed** Critical layout issues when rotating to landscape orientation on iPhone devices
+- **Fixed** Cell sizing that caused content to retain portrait dimensions in landscape mode
+- **Fixed** Collection view layout not being recalculated during orientation changes
+- **Fixed** Scroll position not being maintained during device rotation
+- **Fixed** Page control synchronization after orientation changes
+- **Fixed** Button and UI elements being misaligned or off-screen in landscape
+
+#### Technical Improvements
+- **Added** `viewWillTransition(to:with:)` override to properly handle orientation changes
+- **Added** Layout invalidation on device rotation for proper cell sizing
+- **Added** Scroll position maintenance across orientation transitions
+- **Improved** Cell size calculation using `collectionView.bounds.size` for dynamic updates
+- **Enhanced** Flow layout initialization with explicit spacing constraints
+
+### 🎯 Impact
+
+#### Before This Fix
+- ❌ Cells retained portrait dimensions when rotated to landscape
+- ❌ Content was clipped or completely cut off in landscape
+- ❌ Scrolling and paging broke due to incorrect cell widths
+- ❌ Button and page control were misaligned or off-screen
+- ❌ Poor user experience during onboarding in landscape mode
+
+#### After This Fix
+- ✅ Smooth orientation transitions with proper layout updates
+- ✅ Content fully visible in both portrait and landscape orientations
+- ✅ Proper cell sizing that adapts to current orientation
+- ✅ Scroll position maintained during rotation
+- ✅ All UI elements properly positioned in both orientations
+
+### 📱 Tested Devices
+- iPhone 16 Simulator (iOS 18)
+- iPhone 15 Pro Simulator (iOS 17)
+- iPhone 14 Pro Simulator (iOS 16)
+- All iPhone models with landscape support
+
+### 🔗 Related Issues
+- Fixes #10 - Landscape Orientation Layout Issues on iPhone Simulators
+
+### ⚠️ Breaking Changes
+**None** - This is a pure bug fix with complete backward compatibility.
+
+---
+
 ## [2.1.2] - 2025-11-23
 
 ### 🎨 Enhancements
@@ -256,6 +305,28 @@ Previous versions focused on basic onboarding functionality with UIKit support.
 
 ## Migration Guides
 
+### Migrating to 2.1.3
+
+#### Landscape Orientation Fix
+
+Version 2.1.3 automatically handles device orientation changes. No code changes required!
+
+```swift
+// Your existing code works perfectly in both orientations
+let controller = SVSwiperController(
+    backgroundColor: AppColors.backgroundPrimary,
+    details: content,
+    titleFont: Typography.featured,
+    descriptionFont: Typography.contentPrimary
+)
+
+// Landscape mode now works seamlessly ✅
+// - Proper cell sizing
+// - Content fully visible
+// - Smooth orientation transitions
+// - Scroll position maintained
+```
+
 ### Migrating to 2.1.2
 
 #### Using Enhanced Customization
@@ -338,6 +409,7 @@ SVSwiperView {
 5. **Memory Management**: Proper weak references and lifecycle management
 6. **Developer Experience**: Better documentation, examples, and error messages
 7. **Full Customization**: Complete control over UI styling (v2.1.2+)
+8. **Landscape Support**: Seamless orientation handling (v2.1.3+)
 
 ---
 
