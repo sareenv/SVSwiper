@@ -36,20 +36,21 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
         let pageControl = UIPageControl()
         pageControl.currentPage = 0
         pageControl.numberOfPages = details.count
-        pageControl.currentPageIndicatorTintColor = .systemPurple
-        pageControl.pageIndicatorTintColor = .systemGray
+        pageControl.currentPageIndicatorTintColor = currentPageIndicatorColor
+        pageControl.pageIndicatorTintColor = pageIndicatorColor
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         return pageControl
     }()
     
     private lazy var welcomeButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Get Started", for: .normal)
-        button.backgroundColor = .systemPurple
-        button.setTitleColor(.white, for: .normal)
+        button.setTitle(buttonTitle, for: .normal)
+        button.backgroundColor = buttonBackgroundColor
+        button.setTitleColor(buttonTextColor, for: .normal)
+        button.titleLabel?.font = buttonFont
         button.isHidden = true
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 5
+        button.layer.cornerRadius = buttonCornerRadius
         return button
     }()
     
@@ -59,6 +60,15 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
     private let details: [SVContent]
     private let titleFont: UIFont
     private let descriptionFont: UIFont
+    private let titleColor: UIColor
+    private let descriptionColor: UIColor
+    private let buttonBackgroundColor: UIColor
+    private let buttonTextColor: UIColor
+    private let buttonFont: UIFont
+    private let buttonTitle: String
+    private let buttonCornerRadius: CGFloat
+    private let currentPageIndicatorColor: UIColor
+    private let pageIndicatorColor: UIColor
     
     // Legacy properties for backward compatibility
     private var parentController: UIViewController?
@@ -80,22 +90,78 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
     
     // MARK: - Initialization
     
-    /// Creates a new onboarding swiper controller
+    /// Creates a new onboarding swiper controller with basic customization (Backward compatible)
     /// - Parameters:
     ///   - backgroundColor: The background color for all screens
     ///   - details: Array of SVContent items representing each onboarding screen
     ///   - titleFont: Font for titles (default: bold system font size 14)
     ///   - descriptionFont: Font for descriptions (default: system font size 12)
-    public init(
+    public convenience init(
         backgroundColor: UIColor,
         details: [SVContent],
         titleFont: UIFont = UIFont.boldSystemFont(ofSize: 14),
         descriptionFont: UIFont = UIFont.systemFont(ofSize: 12)
     ) {
+        self.init(
+            backgroundColor: backgroundColor,
+            details: details,
+            titleFont: titleFont,
+            descriptionFont: descriptionFont,
+            titleColor: .label,
+            descriptionColor: .secondaryLabel,
+            buttonBackgroundColor: .systemPurple,
+            buttonTextColor: .white,
+            buttonFont: UIFont.systemFont(ofSize: 17, weight: .semibold),
+            buttonTitle: "Get Started",
+            buttonCornerRadius: 5,
+            currentPageIndicatorColor: .systemPurple,
+            pageIndicatorColor: .systemGray
+        )
+    }
+    
+    /// Creates a new onboarding swiper controller with full customization
+    /// - Parameters:
+    ///   - backgroundColor: The background color for all screens
+    ///   - details: Array of SVContent items representing each onboarding screen
+    ///   - titleFont: Font for titles
+    ///   - descriptionFont: Font for descriptions
+    ///   - titleColor: Color for title text (default: .label)
+    ///   - descriptionColor: Color for description text (default: .secondaryLabel)
+    ///   - buttonBackgroundColor: Background color for the completion button (default: .systemPurple)
+    ///   - buttonTextColor: Text color for the completion button (default: .white)
+    ///   - buttonFont: Font for the completion button (default: systemFont size 17, semibold)
+    ///   - buttonTitle: Title text for the completion button (default: "Get Started")
+    ///   - buttonCornerRadius: Corner radius for the completion button (default: 5)
+    ///   - currentPageIndicatorColor: Color for the active page indicator (default: .systemPurple)
+    ///   - pageIndicatorColor: Color for inactive page indicators (default: .systemGray)
+    public init(
+        backgroundColor: UIColor,
+        details: [SVContent],
+        titleFont: UIFont = UIFont.boldSystemFont(ofSize: 14),
+        descriptionFont: UIFont = UIFont.systemFont(ofSize: 12),
+        titleColor: UIColor = .label,
+        descriptionColor: UIColor = .secondaryLabel,
+        buttonBackgroundColor: UIColor = .systemPurple,
+        buttonTextColor: UIColor = .white,
+        buttonFont: UIFont = UIFont.systemFont(ofSize: 17, weight: .semibold),
+        buttonTitle: String = "Get Started",
+        buttonCornerRadius: CGFloat = 5,
+        currentPageIndicatorColor: UIColor = .systemPurple,
+        pageIndicatorColor: UIColor = .systemGray
+    ) {
         self.backgroundColor = backgroundColor
         self.details = details
         self.titleFont = titleFont
         self.descriptionFont = descriptionFont
+        self.titleColor = titleColor
+        self.descriptionColor = descriptionColor
+        self.buttonBackgroundColor = buttonBackgroundColor
+        self.buttonTextColor = buttonTextColor
+        self.buttonFont = buttonFont
+        self.buttonTitle = buttonTitle
+        self.buttonCornerRadius = buttonCornerRadius
+        self.currentPageIndicatorColor = currentPageIndicatorColor
+        self.pageIndicatorColor = pageIndicatorColor
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -295,6 +361,10 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
         cell.contentTitle = detail.title
         cell.contentDescription = detail.description
         cell.sliderImage = detail.image
+        cell.titleFont = titleFont
+        cell.descriptionFont = descriptionFont
+        cell.titleColor = titleColor
+        cell.descriptionColor = descriptionColor
         
         return cell
     }

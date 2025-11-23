@@ -42,6 +42,34 @@ public class SVSliderCell: UICollectionViewCell {
         }
     }
     
+    /// The font for the title text
+    public var titleFont: UIFont = UIFont.boldSystemFont(ofSize: 21) {
+        didSet {
+            contentTitleLabel.font = titleFont
+        }
+    }
+    
+    /// The font for the description text
+    public var descriptionFont: UIFont = UIFont.systemFont(ofSize: 18) {
+        didSet {
+            contentDescriptionLabel.font = descriptionFont
+        }
+    }
+    
+    /// The color for the title text
+    public var titleColor: UIColor = .label {
+        didSet {
+            contentTitleLabel.textColor = titleColor
+        }
+    }
+    
+    /// The color for the description text
+    public var descriptionColor: UIColor = .secondaryLabel {
+        didSet {
+            contentDescriptionLabel.textColor = descriptionColor
+        }
+    }
+    
     // MARK: - Private UI Components
     
     private lazy var contentImageView: UIImageView = {
@@ -54,7 +82,8 @@ public class SVSliderCell: UICollectionViewCell {
     
     private lazy var contentTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 21)
+        label.font = titleFont
+        label.textColor = titleColor
         label.numberOfLines = 0
         label.textAlignment = .center
         return label
@@ -62,7 +91,8 @@ public class SVSliderCell: UICollectionViewCell {
     
     private lazy var contentDescriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = descriptionFont
+        label.textColor = descriptionColor
         label.numberOfLines = 0
         label.textAlignment = .center
         return label
