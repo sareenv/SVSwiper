@@ -165,6 +165,8 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
         super.init(collectionViewLayout: layout)
         
         showButton(frontParentController: UIViewController())
@@ -224,6 +226,34 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
     public override func viewDidLoad() {
         super.viewDidLoad()
         collectionViewSettings()
+    }
+    
+    public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        // Get current page before rotation
+        let currentPage = pageControl.currentPage
+        
+        coordinator.animate(alongsideTransition: { [weak self] _ in
+            guard let self = self else { return }
+            
+            // Invalidate layout to recalculate cell sizes
+            self.collectionView?.collectionViewLayout.invalidateLayout()
+            
+            // Scroll to current page with new dimensions
+            let indexPath = IndexPath(item: currentPage, section: 0)
+            self.collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+            
+        }, completion: { [weak self] _ in
+            guard let self = self else { return }
+            
+            // Ensure we're on the correct page after rotation
+            let indexPath = IndexPath(item: currentPage, section: 0)
+            self.collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+            
+            // Update page control
+            self.pageControl.currentPage = currentPage
+        })
     }
     
     // MARK: - Private Methods
@@ -300,7 +330,9 @@ public class SVSwiperController: UICollectionViewController, UICollectionViewDel
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height)
+        // Use collectionView's bounds instead of view's frame for accurate sizing
+        // This ensures cells adapt to orientation changes
+        return collectionView.bounds.size
     }
     
     public func collectionView(
